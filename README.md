@@ -7,8 +7,6 @@
 - 🧠 Exploring **AI** to create smarter user experiences
 - ⚡ Always diving into **new tech** to stay ahead
 
-...existing code...
-
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake-dark.svg">
