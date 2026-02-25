@@ -69,6 +69,7 @@
   ![PixiJS](https://img.shields.io/badge/PixiJS-FFDD00?style=flat&logo=pixiv&logoColor=black)
   ![Spine](https://img.shields.io/badge/Spine-FFB83D?style=flat&logo=spine&logoColor=black)
   ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazon-aws&logoColor=white)
+  ![PlayCanvas](https://img.shields.io/badge/playcanvas-F7DF1E?style=flat&logo=playcanvas&logoColor=%23000000)
 
 
 ![gifgithub](https://github.com/user-attachments/assets/54dc1f7a-f327-43ab-ae9c-58c7421eee39)
