@@ -7,6 +7,8 @@
 - 🧠 Exploring **AI** to create smarter user experiences
 - ⚡ Always diving into **new tech** to stay ahead
 
+[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=for-the-badge&logo=discord)](https://discord.gg/HnmEeeNrKF)
+
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake-dark.svg">
