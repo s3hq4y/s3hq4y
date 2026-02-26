@@ -7,6 +7,8 @@
 - 🧠 Exploring **AI** to create smarter user experiences
 - ⚡ Always diving into **new tech** to stay ahead
 
+### 🌐 Let's Stay Connected:
+
 [![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=for-the-badge&logo=discord)](https://discord.gg/HnmEeeNrKF)
 
 <div align="center">
