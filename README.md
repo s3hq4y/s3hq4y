@@ -72,7 +72,7 @@
   ![Google Analytics](https://img.shields.io/badge/Google_Analytics-E37400?style=flat&logo=google-analytics&logoColor=white)
   ![PixiJS](https://img.shields.io/badge/PixiJS-FFDD00?style=flat&logo=pixiv&logoColor=black)
   ![Spine](https://img.shields.io/badge/Spine-FFB83D?style=flat&logo=spine&logoColor=black)
-  ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazon-aws&logoColor=white)
+  ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=aws&logoColor=white)
   ![PlayCanvas](https://img.shields.io/badge/PlayCanvas-F7DF1E?style=flat&logo=playcanvas&logoColor=%23000000)
 
 
