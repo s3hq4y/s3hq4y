@@ -1,7 +1,7 @@
 ### 🚀 Coding like it’s 2050, but debugging like it’s 1999.
 
 - 🌍 Based in **Earth**
-- 💻 No personal page yet
+- 💻 s3hq4y.github.io
 - 📧 s3hq4y@gmail.com
 - 🥇 Currently building **strategy games**
 - 🧠 Exploring **AI** to create smarter user experiences
