@@ -2,7 +2,7 @@
 
 - 🌍 Based in **Earth**
 - 💻 [https://s3hq4y.github.io](https://s3hq4y.github.io)
-- 📧 s3hq4y@gmail.com
+- 📧 s3hq4y@gmail.com / s9y@outlook.sg
 - 🥇 Currently building **strategy games**
 - 🧠 Exploring **AI** to create smarter user experiences
 - ⚡ Always diving into **new tech** to stay ahead
