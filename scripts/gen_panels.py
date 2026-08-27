@@ -95,6 +95,88 @@ def about():
     return shell("s9y@earth: ~/dev \u2014 cat about.txt", L)
 
 
+# ---------------------------------------------------------------- pixels
+# 32x32 pixelization of the Portal icon (resources/icon.svg in the portal
+# repo), rasterized from the source SVG and snapped to its four inks.
+# Cell chars: . = panel background, b = #0078D4, d = #005A9E, c = #50E6FF,
+# w = #ffffff.
+PORTAL_PIXEL = [
+    "................................",
+    "................................",
+    "................................",
+    "....cccccccccccccccccccccddd....",
+    "...bbbbbbbbbbbbbbbbbbbbbbdddd...",
+    "....bbbbbbbbbbbbbbbbbbbbbdddd...",
+    "....bbbbbbbbbbbbbbbbbbbbbdddd...",
+    "....bbbcccccccccccccccbbbdddd...",
+    "....bbbcccccccccccccccbbbdddd...",
+    "....bbbcccbbbbbbbbbbccbbbdddd...",
+    "....bbbccbbbbbbbbbbbccbbbdddd...",
+    "....bbbccbbbbbbbbbbbccbbbdddd...",
+    "....bbbccbbbwwbbbwwbccbbbdddd...",
+    "....bbbccbbbwwbbbwwbccbbbdddd...",
+    "....bbbccbbbwwbbbwwbccbbbdddd...",
+    "....bbbccbcwwwwwwwwwwcbbbdddd...",
+    "....bbbccbcwwwwwwwwwwcbbbdddd...",
+    "....bbbccbcwwwwwwwwwwcbbbdddd...",
+    "....bbbccbcwwwwwwwwwwcbbbdddd...",
+    "....bbbccbcwwwwwwwwwwcbbbdddd...",
+    "....bbbccbbbbbwwwbbbccbbbdddd...",
+    "....bbbccbbbbbwwwbbbccbbbdddd...",
+    "....bbbccbbbbbwwwbbbccbbbdddd...",
+    "....bbbccbbbbbwwwbbbccbbbdddd...",
+    "....bbbccbbbbbbbbbbbccbbbdddd...",
+    "....bbbbbbbbbbbbbbbbbbbbbdddd...",
+    "....bbbbbbbbbbbbbbbbbbbbbdddd...",
+    "....bbbbbbbbbbbbbbbbbbbbbdddd...",
+    ".........................ddd....",
+    "................................",
+    "................................",
+    "................................",
+]
+
+PIXEL_INKS = {"b": "#0078D4", "d": "#005A9E", "c": "#50E6FF", "w": "#ffffff"}
+
+# 5x7 pixel bitmap font, enough for the wordmark.
+PIXEL_FONT = {
+    "P": ["01110", "10001", "10001", "11110", "10000", "10000", "10000"],
+    "O": ["01110", "10001", "10001", "10001", "10001", "10001", "01110"],
+    "R": ["11110", "10001", "10001", "11110", "10100", "10010", "10001"],
+    "T": ["11111", "00100", "00100", "00100", "00100", "00100", "00100"],
+    "A": ["01110", "10001", "10001", "11111", "10001", "10001", "10001"],
+    "L": ["10000", "10000", "10000", "10000", "10000", "10000", "11111"],
+}
+
+# Tokyo Night accents, cycled per letter.
+PIXEL_LETTER_COLORS = ["bl", "cy", "gr", "ye", "ma", "rd"]
+
+def pixel_grid(x, y, grid, cell, inks=PIXEL_INKS):
+    """Emit a pixel-art grid as horizontally run-lengthed crisp rects."""
+    frags = []
+    for r, row in enumerate(grid):
+        run = None  # (char, start_col)
+        for c, ch in enumerate(row + "."):  # sentinel flushes the last run
+            if run and ch != run[0]:
+                frags.append(f'<rect x="{x + run[1]*cell}" y="{y + r*cell}" '
+                             f'width="{(c - run[1]) * cell}" height="{cell}" '
+                             f'fill="{inks[run[0]]}"/>')
+                run = None
+            if ch in inks and not run:
+                run = (ch, c)
+    return frags
+
+def pixel_text(x, y, text, cell):
+    """Emit `text` in the 5x7 pixel font, one accent color per letter."""
+    frags = []
+    for i, ch in enumerate(text):
+        color = PIXEL_LETTER_COLORS[i % len(PIXEL_LETTER_COLORS)]
+        for r, row in enumerate(PIXEL_FONT[ch]):
+            for c, bit in enumerate(row):
+                if bit == "1":
+                    frags.append(f'<rect x="{x + (6*i + c)*cell}" y="{y + r*cell}" '
+                                 f'width="{cell}" height="{cell}" class="{color}"/>')
+    return frags
+
 # --------------------------------------------------------------- portal
 def portal():
     L = []
@@ -123,6 +205,23 @@ def portal():
         y += LH
 
     y += 10
+    L.append((y, prompt(y, "portal --logo")))
+    y += LH + 8
+
+    LOGO_CELL, LETTER_CELL = 5, 8
+    logo_x, logo_y = 212, y                      # 32*5 + 36 + 35*8 = 476 wide
+    tx0 = logo_x + 32 * LOGO_CELL + 36
+    ty0 = logo_y + (32 * LOGO_CELL - 7 * LETTER_CELL) // 2
+    rects = pixel_grid(logo_x, logo_y, PORTAL_PIXEL, LOGO_CELL)
+    rects += pixel_text(tx0, ty0, "PORTAL", LETTER_CELL)
+    L.append((y, '    <g shape-rendering="crispEdges">' + "".join(rects) + "</g>"))
+    ty_tag = ty0 + 7 * LETTER_CELL + 20
+    L.append((ty_tag, f'    <text x="{tx0}" y="{ty_tag}" class="sm">'
+                      f'<tspan class="fg">workspace</tspan>'
+                      f'<tspan class="dim"> \u2192 </tspan>'
+                      f'<tspan class="cy">public MCP endpoint</tspan></text>'))
+    y += 32 * LOGO_CELL + 14
+
     L.append((y, prompt(y, "portal --status")))
     y += LH + 6
     L.append((y, f'    <text x="{X+26}" y="{y}" class="m">'
