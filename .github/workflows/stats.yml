@@ -22,7 +22,8 @@ jobs:
           python-version: "3.12"
       - name: Generate overview card
         env:
-          GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+          # public-only stats: the default token is sufficient, no PAT needed
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/gen_stats.py ${{ github.repository_owner }}
       - name: Commit if changed
         run: |

@@ -23,7 +23,7 @@ query($login:String!){
   user(login:$login){
     createdAt
     followers{totalCount}
-    repositories(first:100, ownerAffiliations:OWNER, isFork:false){
+    repositories(first:100, ownerAffiliations:OWNER, isFork:false, privacy:PUBLIC){
       totalCount
       nodes{ name stargazerCount
         languages(first:8, orderBy:{field:SIZE,direction:DESC}){
@@ -177,7 +177,7 @@ def overview(user):
     stats = [
         ("commits",  c["totalCommitContributions"] + c["restrictedContributionsCount"]),
         ("stars",    total_stars),
-        ("repos",    user["repositories"]["totalCount"]),
+        ("public_repos", user["repositories"]["totalCount"]),
         ("pull_reqs", user["pullRequests"]["totalCount"]),
         ("issues",   user["issues"]["totalCount"]),
         ("followers", user["followers"]["totalCount"]),
