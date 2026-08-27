@@ -137,7 +137,8 @@ LH = 19
 COLORS = dict(bg="#1a1b26", bar="#16161e", border="#2f3348", dim="#565f89",
               fg="#c0caf5", cy="#7dcfff", gr="#9ece6a", ye="#e0af68",
               ma="#bb9af7", rd="#f7768e", bl="#70a5fd")
-HEAT = ["#20222f", "#26405c", "#316f9e", "#49a0d8", "#7dcfff"]
+# index == number of contributions that day (5+ clamps to the brightest)
+HEAT = ["#20222f", "#1f3f5c", "#2a5f8a", "#3782b8", "#4ea6dd", "#7dcfff"]
 
 
 def overview(user):
@@ -230,24 +231,24 @@ def overview(user):
     y += LH + 8
     gap = 3
     cell = max(7, int((W - 2 * PAD + gap) / len(weeks)) - gap)
-    peak = max((d["contributionCount"] for w in weeks for d in w["contributionDays"]), default=0) or 1
     grid_w = len(weeks) * (cell + gap) - gap
     gx = PAD + (W - 2 * PAD - grid_w) / 2
     for wi, wk in enumerate(weeks):
         for d in wk["contributionDays"]:
             dow = datetime.date.fromisoformat(d["date"]).isoweekday() % 7
             n = d["contributionCount"]
-            lvl = 0 if n == 0 else min(4, 1 + int(math.log1p(n) / math.log1p(peak) * 3.999))
+            # absolute scale: 1,2,3,4 commits step through the ramp, 5+ is full brightness
+            lvl = min(n, 5)
             out.append(f'    <rect x="{gx+wi*(cell+gap):.1f}" y="{y+dow*(cell+gap)}" '
                        f'width="{cell}" height="{cell}" rx="1.5" fill="{HEAT[lvl]}">'
                        f'<title>{d["date"]}: {n}</title></rect>')
     y += 7 * (cell + gap) + 6
-    lgx = W - PAD - 5 * (cell + gap) - 38
-    T(lgx - 6, y + 9, "m sm dim", "less", anchor="end")
+    lgx = W - PAD - 6 * (cell + gap) - 38
+    T(lgx - 6, y + 9, "m sm dim", "0", anchor="end")
     for i, col in enumerate(HEAT):
         out.append(f'    <rect x="{lgx+i*(cell+gap)}" y="{y}" width="{cell}" height="{cell}" '
                    f'rx="1.5" fill="{col}"/>')
-    T(lgx + 5 * (cell + gap) + 4, y + 9, "m sm dim", "more")
+    T(lgx + 6 * (cell + gap) + 4, y + 9, "m sm dim", "5+")
     T(X, y + 9, "m sm dim",
       f'generated {datetime.date.today().isoformat()} \u00b7 scripts/gen_stats.py')
     y += cell + 14

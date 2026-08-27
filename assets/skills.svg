@@ -1,126 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 434" width="900" height="434" role="img" aria-label="Technical skills terminal">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 408" width="900" height="408" role="img" aria-label="Technical skills">
   <defs>
-    <clipPath id="sc"><rect x="1" y="1" width="898" height="432" rx="10"/></clipPath>
+    <clipPath id="sc"><rect x="1" y="1" width="898" height="406" rx="10"/></clipPath>
     <style>
-      .m  { font-family:'JetBrains Mono','Cascadia Code',Consolas,'DejaVu Sans Mono',monospace; font-size:14px }
-      .dim{ fill:#565f89 } .fg { fill:#c0caf5 } .cy { fill:#7dcfff } .gr { fill:#9ece6a }
-      .rd { fill:#f7768e } .b { font-weight:700 }
+      .m { font-family:'JetBrains Mono','Cascadia Code',Consolas,'DejaVu Sans Mono',monospace; font-size:14px }
+      .c { font-family:'JetBrains Mono','Cascadia Code',Consolas,'DejaVu Sans Mono',monospace; font-size:13px }
+      .dim{ fill:#565f89 } .fg { fill:#c0caf5 } .cy { fill:#7dcfff }
+      .gr { fill:#9ece6a } .rd { fill:#f7768e } .b { font-weight:700 }
     </style>
   </defs>
-  <rect x=".5" y=".5" width="899" height="433" rx="10.5" fill="#1a1b26" stroke="#2f3348"/>
+  <rect x=".5" y=".5" width="899" height="407" rx="10.5" fill="#1a1b26" stroke="#2f3348"/>
   <g clip-path="url(#sc)">
     <rect x="1" y="1" width="898" height="30" fill="#16161e"/>
     <circle cx="22" cy="16" r="5.5" fill="#f7768e"/>
     <circle cx="40" cy="16" r="5.5" fill="#e0af68"/>
     <circle cx="58" cy="16" r="5.5" fill="#9ece6a"/>
-    <text x="450.0" y="21" class="m dim" text-anchor="middle">s9y@earth: ~/skills — tree</text>
-    <text x="30" y="78" class="m"><tspan class="gr b">➜</tspan><tspan class="cy b">  ~/dev</tspan><tspan class="dim"> git:(</tspan><tspan class="rd">main</tspan><tspan class="dim">) </tspan><tspan class="fg">tree -L 2 ~/skills --with-meters</tspan></text>
-    <text x="30" y="103" class="m dim">skills/</text>
-    <text x="30" y="122" class="m dim">├──</text>
-    <text x="64" y="122" class="m b" fill="#7dcfff">languages/</text>
-    <text x="30" y="141" class="m dim">│  ├──</text>
-    <text x="64" y="141" class="m fg">TypeScript</text>
-    <text x="240" y="141" class="m"><tspan fill="#7dcfff">█████████████</tspan><tspan class="dim">░</tspan></text>
-    <text x="430" y="141" text-anchor="end" class="m dim">95%</text>
-    <text x="30" y="160" class="m dim">│  ├──</text>
-    <text x="64" y="160" class="m fg">JavaScript</text>
-    <text x="240" y="160" class="m"><tspan fill="#7dcfff">█████████████</tspan><tspan class="dim">░</tspan></text>
-    <text x="430" y="160" text-anchor="end" class="m dim">92%</text>
-    <text x="30" y="179" class="m dim">│  ├──</text>
-    <text x="64" y="179" class="m fg">Python</text>
-    <text x="240" y="179" class="m"><tspan fill="#7dcfff">███████████</tspan><tspan class="dim">░░░</tspan></text>
-    <text x="430" y="179" text-anchor="end" class="m dim">78%</text>
-    <text x="30" y="198" class="m dim">│  ├──</text>
-    <text x="64" y="198" class="m fg">Go</text>
-    <text x="240" y="198" class="m"><tspan fill="#7dcfff">█████████</tspan><tspan class="dim">░░░░░</tspan></text>
-    <text x="430" y="198" text-anchor="end" class="m dim">62%</text>
-    <text x="30" y="217" class="m dim">│  ├──</text>
-    <text x="64" y="217" class="m fg">PHP</text>
-    <text x="240" y="217" class="m"><tspan fill="#7dcfff">████████</tspan><tspan class="dim">░░░░░░</tspan></text>
-    <text x="430" y="217" text-anchor="end" class="m dim">55%</text>
-    <text x="30" y="236" class="m dim">│  └──</text>
-    <text x="64" y="236" class="m fg">SQL</text>
-    <text x="240" y="236" class="m"><tspan fill="#7dcfff">██████████</tspan><tspan class="dim">░░░░</tspan></text>
-    <text x="430" y="236" text-anchor="end" class="m dim">70%</text>
-    <text x="466" y="122" class="m dim">├──</text>
-    <text x="500" y="122" class="m b" fill="#9ece6a">frontend/</text>
-    <text x="466" y="141" class="m dim">│  ├──</text>
-    <text x="500" y="141" class="m fg">React / Next.js</text>
-    <text x="676" y="141" class="m"><tspan fill="#9ece6a">█████████████</tspan><tspan class="dim">░</tspan></text>
-    <text x="866" y="141" text-anchor="end" class="m dim">93%</text>
-    <text x="466" y="160" class="m dim">│  ├──</text>
-    <text x="500" y="160" class="m fg">Vue / Nuxt</text>
-    <text x="676" y="160" class="m"><tspan fill="#9ece6a">████████████</tspan><tspan class="dim">░░</tspan></text>
-    <text x="866" y="160" text-anchor="end" class="m dim">88%</text>
-    <text x="466" y="179" class="m dim">│  ├──</text>
-    <text x="500" y="179" class="m fg">Tailwind / SCSS</text>
-    <text x="676" y="179" class="m"><tspan fill="#9ece6a">████████████</tspan><tspan class="dim">░░</tspan></text>
-    <text x="866" y="179" text-anchor="end" class="m dim">85%</text>
-    <text x="466" y="198" class="m dim">│  ├──</text>
-    <text x="500" y="198" class="m fg">Framer Motion / GSAP</text>
-    <text x="676" y="198" class="m"><tspan fill="#9ece6a">██████████</tspan><tspan class="dim">░░░░</tspan></text>
-    <text x="866" y="198" text-anchor="end" class="m dim">74%</text>
-    <text x="466" y="217" class="m dim">│  ├──</text>
-    <text x="500" y="217" class="m fg">React Native</text>
-    <text x="676" y="217" class="m"><tspan fill="#9ece6a">█████████</tspan><tspan class="dim">░░░░░</tspan></text>
-    <text x="866" y="217" text-anchor="end" class="m dim">66%</text>
-    <text x="466" y="236" class="m dim">│  └──</text>
-    <text x="500" y="236" class="m fg">Angular</text>
-    <text x="676" y="236" class="m"><tspan fill="#9ece6a">███████</tspan><tspan class="dim">░░░░░░░</tspan></text>
-    <text x="866" y="236" text-anchor="end" class="m dim">52%</text>
-    <text x="30" y="265" class="m dim">└──</text>
-    <text x="64" y="265" class="m b" fill="#bb9af7">graphics/</text>
-    <text x="30" y="284" class="m dim">   ├──</text>
-    <text x="64" y="284" class="m fg">Three.js / R3F</text>
-    <text x="240" y="284" class="m"><tspan fill="#bb9af7">█████████████</tspan><tspan class="dim">░</tspan></text>
-    <text x="430" y="284" text-anchor="end" class="m dim">90%</text>
-    <text x="30" y="303" class="m dim">   ├──</text>
-    <text x="64" y="303" class="m fg">Babylon.js</text>
-    <text x="240" y="303" class="m"><tspan fill="#bb9af7">███████████</tspan><tspan class="dim">░░░</tspan></text>
-    <text x="430" y="303" text-anchor="end" class="m dim">82%</text>
-    <text x="30" y="322" class="m dim">   ├──</text>
-    <text x="64" y="322" class="m fg">PlayCanvas</text>
-    <text x="240" y="322" class="m"><tspan fill="#bb9af7">███████████</tspan><tspan class="dim">░░░</tspan></text>
-    <text x="430" y="322" text-anchor="end" class="m dim">80%</text>
-    <text x="30" y="341" class="m dim">   ├──</text>
-    <text x="64" y="341" class="m fg">PixiJS</text>
-    <text x="240" y="341" class="m"><tspan fill="#bb9af7">██████████</tspan><tspan class="dim">░░░░</tspan></text>
-    <text x="430" y="341" text-anchor="end" class="m dim">72%</text>
-    <text x="30" y="360" class="m dim">   ├──</text>
-    <text x="64" y="360" class="m fg">WebGL / GLSL</text>
-    <text x="240" y="360" class="m"><tspan fill="#bb9af7">██████████</tspan><tspan class="dim">░░░░</tspan></text>
-    <text x="430" y="360" text-anchor="end" class="m dim">68%</text>
-    <text x="30" y="379" class="m dim">   └──</text>
-    <text x="64" y="379" class="m fg">Spine</text>
-    <text x="240" y="379" class="m"><tspan fill="#bb9af7">████████</tspan><tspan class="dim">░░░░░░</tspan></text>
-    <text x="430" y="379" text-anchor="end" class="m dim">55%</text>
-    <text x="466" y="265" class="m dim">└──</text>
-    <text x="500" y="265" class="m b" fill="#e0af68">backend·infra/</text>
-    <text x="466" y="284" class="m dim">   ├──</text>
-    <text x="500" y="284" class="m fg">Node / Express / Nest</text>
-    <text x="676" y="284" class="m"><tspan fill="#e0af68">████████████</tspan><tspan class="dim">░░</tspan></text>
-    <text x="866" y="284" text-anchor="end" class="m dim">88%</text>
-    <text x="466" y="303" class="m dim">   ├──</text>
-    <text x="500" y="303" class="m fg">PostgreSQL / MySQL</text>
-    <text x="676" y="303" class="m"><tspan fill="#e0af68">███████████</tspan><tspan class="dim">░░░</tspan></text>
-    <text x="866" y="303" text-anchor="end" class="m dim">80%</text>
-    <text x="466" y="322" class="m dim">   ├──</text>
-    <text x="500" y="322" class="m fg">MongoDB / Redis</text>
-    <text x="676" y="322" class="m"><tspan fill="#e0af68">███████████</tspan><tspan class="dim">░░░</tspan></text>
-    <text x="866" y="322" text-anchor="end" class="m dim">76%</text>
-    <text x="466" y="341" class="m dim">   ├──</text>
-    <text x="500" y="341" class="m fg">Docker</text>
-    <text x="676" y="341" class="m"><tspan fill="#e0af68">██████████</tspan><tspan class="dim">░░░░</tspan></text>
-    <text x="866" y="341" text-anchor="end" class="m dim">74%</text>
-    <text x="466" y="360" class="m dim">   ├──</text>
-    <text x="500" y="360" class="m fg">GraphQL / Apollo</text>
-    <text x="676" y="360" class="m"><tspan fill="#e0af68">██████████</tspan><tspan class="dim">░░░░</tspan></text>
-    <text x="866" y="360" text-anchor="end" class="m dim">71%</text>
-    <text x="466" y="379" class="m dim">   └──</text>
-    <text x="500" y="379" class="m fg">AWS / Nginx / Caddy</text>
-    <text x="676" y="379" class="m"><tspan fill="#e0af68">█████████</tspan><tspan class="dim">░░░░░</tspan></text>
-    <text x="866" y="379" text-anchor="end" class="m dim">65%</text>
-    <text x="30" y="410" class="m"><tspan class="gr b">➜</tspan><tspan class="cy b">  ~/dev</tspan><tspan class="dim"> git:(</tspan><tspan class="rd">main</tspan><tspan class="dim">) </tspan></text>
-    <rect x="173" y="399" width="8" height="14" fill="#c0caf5"><animate attributeName="opacity" values="1;1;0;0" dur="1.1s" repeatCount="indefinite"/></rect>
+    <text x="450.0" y="21" class="m dim" text-anchor="middle">s9y@earth: ~/skills — skills --list</text>
+    <text x="30" y="78" class="m"><tspan class="gr b">➜</tspan><tspan class="cy b">  ~/dev</tspan><tspan class="dim"> git:(</tspan><tspan class="rd">main</tspan><tspan class="dim">) </tspan><tspan class="fg">skills --list --group</tspan></text>
+    <g><rect x="148.0" y="109" width="100.2" height="24" rx="5" fill="#7dcfff" fill-opacity=".13" stroke="#7dcfff" stroke-opacity=".55"/><text x="198.1" y="125" text-anchor="middle" class="c" fill="#7dcfff">TypeScript</text></g>
+    <g><rect x="255.2" y="109" width="100.2" height="24" rx="5" fill="#7dcfff" fill-opacity=".13" stroke="#7dcfff" stroke-opacity=".55"/><text x="305.3" y="125" text-anchor="middle" class="c" fill="#7dcfff">JavaScript</text></g>
+    <g><rect x="362.4" y="109" width="68.9" height="24" rx="5" fill="#7dcfff" fill-opacity=".13" stroke="#7dcfff" stroke-opacity=".55"/><text x="396.9" y="125" text-anchor="middle" class="c" fill="#7dcfff">Python</text></g>
+    <g><rect x="438.3" y="109" width="37.6" height="24" rx="5" fill="#7dcfff" fill-opacity=".13" stroke="#7dcfff" stroke-opacity=".55"/><text x="457.1" y="125" text-anchor="middle" class="c" fill="#7dcfff">Go</text></g>
+    <g><rect x="483.0" y="109" width="45.5" height="24" rx="5" fill="#7dcfff" fill-opacity=".13" stroke="#7dcfff" stroke-opacity=".55"/><text x="505.7" y="125" text-anchor="middle" class="c" fill="#7dcfff">PHP</text></g>
+    <g><rect x="535.4" y="109" width="45.5" height="24" rx="5" fill="#7dcfff" fill-opacity=".13" stroke="#7dcfff" stroke-opacity=".55"/><text x="558.1" y="125" text-anchor="middle" class="c" fill="#7dcfff">SQL</text></g>
+    <text x="30" y="125" class="m b" fill="#7dcfff">languages<tspan class="dim">/</tspan></text>
+    <g><rect x="148.0" y="149" width="61.1" height="24" rx="5" fill="#9ece6a" fill-opacity=".13" stroke="#9ece6a" stroke-opacity=".55"/><text x="178.6" y="165" text-anchor="middle" class="c" fill="#9ece6a">React</text></g>
+    <g><rect x="216.1" y="149" width="76.7" height="24" rx="5" fill="#9ece6a" fill-opacity=".13" stroke="#9ece6a" stroke-opacity=".55"/><text x="254.5" y="165" text-anchor="middle" class="c" fill="#9ece6a">Next.js</text></g>
+    <g><rect x="299.8" y="149" width="45.5" height="24" rx="5" fill="#9ece6a" fill-opacity=".13" stroke="#9ece6a" stroke-opacity=".55"/><text x="322.6" y="165" text-anchor="middle" class="c" fill="#9ece6a">Vue</text></g>
+    <g><rect x="352.3" y="149" width="53.3" height="24" rx="5" fill="#9ece6a" fill-opacity=".13" stroke="#9ece6a" stroke-opacity=".55"/><text x="378.9" y="165" text-anchor="middle" class="c" fill="#9ece6a">Nuxt</text></g>
+    <g><rect x="412.6" y="149" width="76.7" height="24" rx="5" fill="#9ece6a" fill-opacity=".13" stroke="#9ece6a" stroke-opacity=".55"/><text x="451.0" y="165" text-anchor="middle" class="c" fill="#9ece6a">Angular</text></g>
+    <g><rect x="496.3" y="149" width="61.1" height="24" rx="5" fill="#9ece6a" fill-opacity=".13" stroke="#9ece6a" stroke-opacity=".55"/><text x="526.9" y="165" text-anchor="middle" class="c" fill="#9ece6a">Redux</text></g>
+    <g><rect x="564.4" y="149" width="115.8" height="24" rx="5" fill="#9ece6a" fill-opacity=".13" stroke="#9ece6a" stroke-opacity=".55"/><text x="622.3" y="165" text-anchor="middle" class="c" fill="#9ece6a">React Native</text></g>
+    <g><rect x="687.3" y="149" width="84.6" height="24" rx="5" fill="#9ece6a" fill-opacity=".13" stroke="#9ece6a" stroke-opacity=".55"/><text x="729.5" y="165" text-anchor="middle" class="c" fill="#9ece6a">Tailwind</text></g>
+    <g><rect x="778.8" y="149" width="53.3" height="24" rx="5" fill="#9ece6a" fill-opacity=".13" stroke="#9ece6a" stroke-opacity=".55"/><text x="805.5" y="165" text-anchor="middle" class="c" fill="#9ece6a">SCSS</text></g>
+    <g><rect x="148.0" y="182" width="108.0" height="24" rx="5" fill="#9ece6a" fill-opacity=".13" stroke="#9ece6a" stroke-opacity=".55"/><text x="202.0" y="198" text-anchor="middle" class="c" fill="#9ece6a">Material-UI</text></g>
+    <g><rect x="263.0" y="182" width="123.7" height="24" rx="5" fill="#9ece6a" fill-opacity=".13" stroke="#9ece6a" stroke-opacity=".55"/><text x="324.8" y="198" text-anchor="middle" class="c" fill="#9ece6a">Framer Motion</text></g>
+    <g><rect x="393.7" y="182" width="53.3" height="24" rx="5" fill="#9ece6a" fill-opacity=".13" stroke="#9ece6a" stroke-opacity=".55"/><text x="420.3" y="198" text-anchor="middle" class="c" fill="#9ece6a">GSAP</text></g>
+    <g><rect x="454.0" y="182" width="45.5" height="24" rx="5" fill="#9ece6a" fill-opacity=".13" stroke="#9ece6a" stroke-opacity=".55"/><text x="476.7" y="198" text-anchor="middle" class="c" fill="#9ece6a">PWA</text></g>
+    <text x="30" y="182" class="m b" fill="#9ece6a">frontend<tspan class="dim">/</tspan></text>
+    <g><rect x="148.0" y="222" width="84.6" height="24" rx="5" fill="#bb9af7" fill-opacity=".13" stroke="#bb9af7" stroke-opacity=".55"/><text x="190.3" y="238" text-anchor="middle" class="c" fill="#bb9af7">Three.js</text></g>
+    <g><rect x="239.6" y="222" width="154.9" height="24" rx="5" fill="#bb9af7" fill-opacity=".13" stroke="#bb9af7" stroke-opacity=".55"/><text x="317.0" y="238" text-anchor="middle" class="c" fill="#bb9af7">React Three Fiber</text></g>
+    <g><rect x="401.5" y="222" width="100.2" height="24" rx="5" fill="#bb9af7" fill-opacity=".13" stroke="#bb9af7" stroke-opacity=".55"/><text x="451.6" y="238" text-anchor="middle" class="c" fill="#bb9af7">Babylon.js</text></g>
+    <g><rect x="508.7" y="222" width="100.2" height="24" rx="5" fill="#bb9af7" fill-opacity=".13" stroke="#bb9af7" stroke-opacity=".55"/><text x="558.8" y="238" text-anchor="middle" class="c" fill="#bb9af7">PlayCanvas</text></g>
+    <g><rect x="615.9" y="222" width="68.9" height="24" rx="5" fill="#bb9af7" fill-opacity=".13" stroke="#bb9af7" stroke-opacity=".55"/><text x="650.4" y="238" text-anchor="middle" class="c" fill="#bb9af7">PixiJS</text></g>
+    <g><rect x="691.8" y="222" width="61.1" height="24" rx="5" fill="#bb9af7" fill-opacity=".13" stroke="#bb9af7" stroke-opacity=".55"/><text x="722.4" y="238" text-anchor="middle" class="c" fill="#bb9af7">Spine</text></g>
+    <g><rect x="759.9" y="222" width="61.1" height="24" rx="5" fill="#bb9af7" fill-opacity=".13" stroke="#bb9af7" stroke-opacity=".55"/><text x="790.5" y="238" text-anchor="middle" class="c" fill="#bb9af7">WebGL</text></g>
+    <text x="30" y="238" class="m b" fill="#bb9af7">graphics<tspan class="dim">/</tspan></text>
+    <g><rect x="148.0" y="262" width="76.7" height="24" rx="5" fill="#e0af68" fill-opacity=".13" stroke="#e0af68" stroke-opacity=".55"/><text x="186.4" y="278" text-anchor="middle" class="c" fill="#e0af68">Node.js</text></g>
+    <g><rect x="231.7" y="262" width="76.7" height="24" rx="5" fill="#e0af68" fill-opacity=".13" stroke="#e0af68" stroke-opacity=".55"/><text x="270.1" y="278" text-anchor="middle" class="c" fill="#e0af68">Express</text></g>
+    <g><rect x="315.5" y="262" width="68.9" height="24" rx="5" fill="#e0af68" fill-opacity=".13" stroke="#e0af68" stroke-opacity=".55"/><text x="349.9" y="278" text-anchor="middle" class="c" fill="#e0af68">NestJS</text></g>
+    <g><rect x="391.4" y="262" width="76.7" height="24" rx="5" fill="#e0af68" fill-opacity=".13" stroke="#e0af68" stroke-opacity=".55"/><text x="429.8" y="278" text-anchor="middle" class="c" fill="#e0af68">Laravel</text></g>
+    <g><rect x="475.1" y="262" width="108.0" height="24" rx="5" fill="#e0af68" fill-opacity=".13" stroke="#e0af68" stroke-opacity=".55"/><text x="529.2" y="278" text-anchor="middle" class="c" fill="#e0af68">CodeIgniter</text></g>
+    <g><rect x="590.2" y="262" width="76.7" height="24" rx="5" fill="#e0af68" fill-opacity=".13" stroke="#e0af68" stroke-opacity=".55"/><text x="628.5" y="278" text-anchor="middle" class="c" fill="#e0af68">GraphQL</text></g>
+    <g><rect x="673.9" y="262" width="68.9" height="24" rx="5" fill="#e0af68" fill-opacity=".13" stroke="#e0af68" stroke-opacity=".55"/><text x="708.4" y="278" text-anchor="middle" class="c" fill="#e0af68">Apollo</text></g>
+    <g><rect x="749.8" y="262" width="53.3" height="24" rx="5" fill="#e0af68" fill-opacity=".13" stroke="#e0af68" stroke-opacity=".55"/><text x="776.5" y="278" text-anchor="middle" class="c" fill="#e0af68">REST</text></g>
+    <text x="30" y="278" class="m b" fill="#e0af68">backend<tspan class="dim">/</tspan></text>
+    <g><rect x="148.0" y="302" width="100.2" height="24" rx="5" fill="#f7768e" fill-opacity=".13" stroke="#f7768e" stroke-opacity=".55"/><text x="198.1" y="318" text-anchor="middle" class="c" fill="#f7768e">PostgreSQL</text></g>
+    <g><rect x="255.2" y="302" width="61.1" height="24" rx="5" fill="#f7768e" fill-opacity=".13" stroke="#f7768e" stroke-opacity=".55"/><text x="285.8" y="318" text-anchor="middle" class="c" fill="#f7768e">MySQL</text></g>
+    <g><rect x="323.3" y="302" width="76.7" height="24" rx="5" fill="#f7768e" fill-opacity=".13" stroke="#f7768e" stroke-opacity=".55"/><text x="361.7" y="318" text-anchor="middle" class="c" fill="#f7768e">MongoDB</text></g>
+    <g><rect x="407.0" y="302" width="61.1" height="24" rx="5" fill="#f7768e" fill-opacity=".13" stroke="#f7768e" stroke-opacity=".55"/><text x="437.6" y="318" text-anchor="middle" class="c" fill="#f7768e">Redis</text></g>
+    <g><rect x="475.1" y="302" width="84.6" height="24" rx="5" fill="#f7768e" fill-opacity=".13" stroke="#f7768e" stroke-opacity=".55"/><text x="517.4" y="318" text-anchor="middle" class="c" fill="#f7768e">Firebase</text></g>
+    <g><rect x="566.7" y="302" width="68.9" height="24" rx="5" fill="#f7768e" fill-opacity=".13" stroke="#f7768e" stroke-opacity=".55"/><text x="601.2" y="318" text-anchor="middle" class="c" fill="#f7768e">Prisma</text></g>
+    <text x="30" y="318" class="m b" fill="#f7768e">data<tspan class="dim">/</tspan></text>
+    <g><rect x="148.0" y="342" width="68.9" height="24" rx="5" fill="#7aa2f7" fill-opacity=".13" stroke="#7aa2f7" stroke-opacity=".55"/><text x="182.5" y="358" text-anchor="middle" class="c" fill="#7aa2f7">Docker</text></g>
+    <g><rect x="223.9" y="342" width="45.5" height="24" rx="5" fill="#7aa2f7" fill-opacity=".13" stroke="#7aa2f7" stroke-opacity=".55"/><text x="246.7" y="358" text-anchor="middle" class="c" fill="#7aa2f7">AWS</text></g>
+    <g><rect x="276.4" y="342" width="61.1" height="24" rx="5" fill="#7aa2f7" fill-opacity=".13" stroke="#7aa2f7" stroke-opacity=".55"/><text x="306.9" y="358" text-anchor="middle" class="c" fill="#7aa2f7">Nginx</text></g>
+    <g><rect x="344.5" y="342" width="61.1" height="24" rx="5" fill="#7aa2f7" fill-opacity=".13" stroke="#7aa2f7" stroke-opacity=".55"/><text x="375.0" y="358" text-anchor="middle" class="c" fill="#7aa2f7">Caddy</text></g>
+    <g><rect x="412.6" y="342" width="45.5" height="24" rx="5" fill="#7aa2f7" fill-opacity=".13" stroke="#7aa2f7" stroke-opacity=".55"/><text x="435.3" y="358" text-anchor="middle" class="c" fill="#7aa2f7">Git</text></g>
+    <g><rect x="465.0" y="342" width="37.6" height="24" rx="5" fill="#7aa2f7" fill-opacity=".13" stroke="#7aa2f7" stroke-opacity=".55"/><text x="483.9" y="358" text-anchor="middle" class="c" fill="#7aa2f7">NX</text></g>
+    <g><rect x="509.7" y="342" width="53.3" height="24" rx="5" fill="#7aa2f7" fill-opacity=".13" stroke="#7aa2f7" stroke-opacity=".55"/><text x="536.3" y="358" text-anchor="middle" class="c" fill="#7aa2f7">Jest</text></g>
+    <text x="30" y="358" class="m b" fill="#7aa2f7">infra<tspan class="dim">/</tspan></text>
+    <text x="30" y="384" class="m"><tspan class="gr b">➜</tspan><tspan class="cy b">  ~/dev</tspan><tspan class="dim"> git:(</tspan><tspan class="rd">main</tspan><tspan class="dim">) </tspan></text>
+    <rect x="173" y="373" width="8" height="14" fill="#c0caf5"><animate attributeName="opacity" values="1;1;0;0" dur="1.1s" repeatCount="indefinite"/></rect>
   </g>
 </svg>
