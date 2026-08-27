@@ -42,17 +42,18 @@ def shell(title, body_lines, height_pad=24):
     return head + "\n".join(f for _, f in body_lines) + "\n  </g>\n</svg>\n"
 
 
-def prompt(y, cmd):
+CURSOR = ('<tspan class="fg">\u2588<animate attributeName="opacity" values="1;1;0;0" '
+          'dur="1.1s" repeatCount="indefinite"/></tspan>')
+
+
+def prompt(y, cmd, caret=False):
+    """A shell prompt line. The caret is a tspan inside the same text run, so it
+    always sits exactly one cell after the last glyph regardless of the font."""
     return (f'    <text x="{X}" y="{y}" class="m">'
             f'<tspan class="gr b">\u279c</tspan><tspan class="cy b">  ~/dev</tspan>'
             f'<tspan class="dim"> git:(</tspan><tspan class="rd">main</tspan>'
-            f'<tspan class="dim">) </tspan><tspan class="fg">{esc(cmd)}</tspan></text>')
-
-
-def cursor(y, x=X + 143):
-    return (f'    <rect x="{x}" y="{y-11}" width="8" height="14" fill="#c0caf5">'
-            f'<animate attributeName="opacity" values="1;1;0;0" dur="1.1s" '
-            f'repeatCount="indefinite"/></rect>')
+            f'<tspan class="dim">) </tspan><tspan class="fg">{esc(cmd)}</tspan>'
+            f'{CURSOR if caret else ""}</text>')
 
 
 # ---------------------------------------------------------------- about
@@ -90,8 +91,7 @@ def about():
                  f'<tspan class="gr">0.42, 1.15, 2.03</tspan></text>'))
     y += LH + 12
 
-    L.append((y, prompt(y, "")))
-    L.append((y, cursor(y)))
+    L.append((y, prompt(y, "", caret=True)))
     return shell("s9y@earth: ~/dev \u2014 cat about.txt", L)
 
 
@@ -120,8 +120,7 @@ def footer():
                  f'Thanks for stopping by \u2014 let\u2019s build something impossible.</text>'))
     y += LH + 12
 
-    L.append((y, prompt(y, "")))
-    L.append((y, cursor(y)))
+    L.append((y, prompt(y, "", caret=True)))
     return shell("s9y@earth: ~/dev \u2014 zsh", L)
 
 

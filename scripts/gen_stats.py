@@ -159,10 +159,15 @@ def overview(user):
         a = f' text-anchor="{anchor}"' if anchor else ""
         out.append(f'    <text x="{x:.0f}" y="{y}"{a} class="{cls}">{txt}</text>')
 
-    def prompt(y, cmd):
+    CURSOR = ('<tspan class="fg">\u2588<animate attributeName="opacity" '
+              'values="1;1;0;0" dur="1.1s" repeatCount="indefinite"/></tspan>')
+
+    def prompt(y, cmd, caret=False):
+        # caret lives inside the same text run -> always one cell after the text
         T(X, y, "m", '<tspan class="gr b">\u279c</tspan><tspan class="cy b">  ~/dev</tspan>'
           '<tspan class="dim"> git:(</tspan><tspan class="rd">main</tspan>'
-          f'<tspan class="dim">) </tspan><tspan class="fg">{cmd}</tspan>')
+          f'<tspan class="dim">) </tspan><tspan class="fg">{cmd}</tspan>'
+          f'{CURSOR if caret else ""}')
 
     # ---- block 1: gh stats
     y = 78
@@ -254,11 +259,7 @@ def overview(user):
     y += cell + 14
 
     # ---- trailing prompt
-    T(X, y + 14, "m", '<tspan class="gr b">\u279c</tspan><tspan class="cy b">  ~/dev</tspan>'
-      '<tspan class="dim"> git:(</tspan><tspan class="rd">main</tspan><tspan class="dim">) </tspan>')
-    out.append(f'    <rect x="{X+143}" y="{y+3}" width="8" height="14" fill="{C["fg"]}">'
-               f'<animate attributeName="opacity" values="1;1;0;0" dur="1.1s" '
-               f'repeatCount="indefinite"/></rect>')
+    prompt(y + 14, "", caret=True)
     H = y + 38
 
     head = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="{esc(USER)} GitHub overview terminal">

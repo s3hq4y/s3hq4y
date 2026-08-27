@@ -114,10 +114,7 @@
       </g>
       <g opacity="1">
         <animate attributeName="opacity" from="0" to="1" begin="1.9s" dur="0.01s" fill="freeze"/>
-        <text x="30" y="298"><tspan class="gr b">➜</tspan><tspan class="cy b">  ~/dev</tspan><tspan class="dim"> git:(</tspan><tspan class="rd">main</tspan><tspan class="dim">) </tspan><tspan class="fg">git push origin main</tspan></text>
-        <rect x="311" y="286" width="8" height="15" fill="#c0caf5">
-          <animate attributeName="opacity" values="1;1;0;0" dur="1.1s" begin="1.9s" repeatCount="indefinite"/>
-        </rect>
+        <text x="30" y="298"><tspan class="gr b">➜</tspan><tspan class="cy b">  ~/dev</tspan><tspan class="dim"> git:(</tspan><tspan class="rd">main</tspan><tspan class="dim">) </tspan><tspan class="fg">git push origin main</tspan><tspan class="fg">█<animate attributeName="opacity" values="1;1;0;0" dur="1.1s" begin="1.9s" repeatCount="indefinite"/></tspan></text>
       </g>
     </g>
   </g>
