@@ -108,10 +108,12 @@ const s9y = {
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=s3hq4y&show_icons=true&hide_border=true&theme=tokyonight&include_all_commits=true" alt="GitHub stats" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=s3hq4y&layout=compact&hide_border=true&theme=tokyonight&langs_count=8" alt="Top languages" />
+<img src="./assets/stats.svg" alt="GitHub stats" height="220" />
+<img src="./assets/langs.svg" alt="Most used languages" height="220" />
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=s3hq4y&hide_border=true&theme=tokyonight" alt="Streak" />
+<a href="https://git.io/streak-stats"><img src="https://streak-stats.demolab.com?user=s3hq4y&hide_border=true&theme=tokyonight" alt="Streak" /></a>
+
+<sub>Cards are generated in-repo by <code>scripts/gen_stats.py</code> and refreshed daily by GitHub Actions — no third-party rate limits.</sub>
 
 </div>
 

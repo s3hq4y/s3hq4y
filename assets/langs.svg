@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="200" viewBox="0 0 380 200" role="img" aria-label="Most used languages">
+<style>.t{font:600 18px "Segoe UI",Ubuntu,sans-serif;fill:#70a5fd}.l{font:400 12px "Segoe UI",Ubuntu,sans-serif;fill:#c9d1d9}</style>
+<rect x="0.5" y="0.5" width="379" height="199" rx="10" fill="#1a1b27" stroke="#2f3348"/>
+<text x="25" y="35" class="t">Most Used Languages</text>
+<line x1="25" y1="47" x2="355" y2="47" stroke="#2f3348"/>
+<mask id="m"><rect x="25" y="62" width="330" height="10" rx="5" fill="#fff"/></mask>
+<g mask="url(#m)">
+<rect x="25.00" y="62" width="141.19" height="10" fill="#f1e05a"><animate attributeName="width" from="0" to="141.19" dur="0.8s" fill="freeze"/></rect>
+<rect x="166.19" y="62" width="107.40" height="10" fill="#3178c6"><animate attributeName="width" from="0" to="107.40" dur="0.8s" fill="freeze"/></rect>
+<rect x="273.59" y="62" width="41.74" height="10" fill="#41b883"><animate attributeName="width" from="0" to="41.74" dur="0.8s" fill="freeze"/></rect>
+<rect x="315.34" y="62" width="13.01" height="10" fill="#e34c26"><animate attributeName="width" from="0" to="13.01" dur="0.8s" fill="freeze"/></rect>
+<rect x="328.34" y="62" width="8.60" height="10" fill="#ff5a03"><animate attributeName="width" from="0" to="8.60" dur="0.8s" fill="freeze"/></rect>
+<rect x="336.95" y="62" width="5.79" height="10" fill="#663399"><animate attributeName="width" from="0" to="5.79" dur="0.8s" fill="freeze"/></rect>
+<rect x="342.74" y="62" width="4.99" height="10" fill="#ff3e00"><animate attributeName="width" from="0" to="4.99" dur="0.8s" fill="freeze"/></rect>
+<rect x="347.73" y="62" width="7.27" height="10" fill="#8b93b3"/>
+</g>
+<circle cx="32" cy="92" r="5" fill="#f1e05a"/><text x="43" y="96" class="l">JavaScript 42.8%</text>
+<circle cx="200" cy="92" r="5" fill="#3178c6"/><text x="211" y="96" class="l">TypeScript 32.5%</text>
+<circle cx="32" cy="116" r="5" fill="#41b883"/><text x="43" y="120" class="l">Vue 12.6%</text>
+<circle cx="200" cy="116" r="5" fill="#e34c26"/><text x="211" y="120" class="l">HTML 3.9%</text>
+<circle cx="32" cy="140" r="5" fill="#ff5a03"/><text x="43" y="144" class="l">Astro 2.6%</text>
+<circle cx="200" cy="140" r="5" fill="#663399"/><text x="211" y="144" class="l">CSS 1.8%</text>
+<circle cx="32" cy="164" r="5" fill="#ff3e00"/><text x="43" y="168" class="l">Svelte 1.5%</text>
+</svg>
