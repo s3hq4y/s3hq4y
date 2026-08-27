@@ -133,163 +133,152 @@ def languages(user, top_n=6):
 
 
 # ---------------------------------------------------------------- card
+LH = 19
+COLORS = dict(bg="#1a1b26", bar="#16161e", border="#2f3348", dim="#565f89",
+              fg="#c0caf5", cy="#7dcfff", gr="#9ece6a", ye="#e0af68",
+              ma="#bb9af7", rd="#f7768e", bl="#70a5fd")
+HEAT = ["#20222f", "#26405c", "#316f9e", "#49a0d8", "#7dcfff"]
+
+
 def overview(user):
+    C = COLORS
     c = user["contributionsCollection"]
     days = flat_days(user)
     cur, cur_rng, best, best_rng = streaks(days)
     total_stars = sum(n["stargazerCount"] for n in user["repositories"]["nodes"])
     contribs = c["contributionCalendar"]["totalContributions"]
     langs = languages(user)
+    weeks = c["contributionCalendar"]["weeks"]
+
+    W, PAD = 900, 26
+    X = PAD + 4
+    out = []
+
+    def T(x, y, cls, txt, anchor=None):
+        a = f' text-anchor="{anchor}"' if anchor else ""
+        out.append(f'    <text x="{x:.0f}" y="{y}"{a} class="{cls}">{txt}</text>')
+
+    def prompt(y, cmd):
+        T(X, y, "m", '<tspan class="gr b">\u279c</tspan><tspan class="cy b">  ~/dev</tspan>'
+          '<tspan class="dim"> git:(</tspan><tspan class="rd">main</tspan>'
+          f'<tspan class="dim">) </tspan><tspan class="fg">{cmd}</tspan>')
+
+    # ---- block 1: gh stats
+    y = 78
+    prompt(y, "gh api graphql --stats")
+    y += LH + 6
 
     stats = [
-        ("commit", "Commits",      c["totalCommitContributions"] + c["restrictedContributionsCount"]),
-        ("star",   "Stars earned", total_stars),
-        ("repo",   "Repositories", user["repositories"]["totalCount"]),
-        ("pr",     "Pull requests", user["pullRequests"]["totalCount"]),
-        ("issue",  "Issues",       user["issues"]["totalCount"]),
-        ("people", "Followers",    user["followers"]["totalCount"]),
+        ("commits",  c["totalCommitContributions"] + c["restrictedContributionsCount"]),
+        ("stars",    total_stars),
+        ("repos",    user["repositories"]["totalCount"]),
+        ("pull_reqs", user["pullRequests"]["totalCount"]),
+        ("issues",   user["issues"]["totalCount"]),
+        ("followers", user["followers"]["totalCount"]),
     ]
+    COL2 = X + 436
+    for i, (k, v) in enumerate(stats):
+        cx = X if i % 2 == 0 else COL2
+        ly = y + (i // 2) * LH
+        tee = "\u2514\u2500" if i // 2 == 2 else "\u251c\u2500"
+        T(cx, ly, "m dim", tee)
+        T(cx + 24, ly, "m fg", k)
+        T(cx + 150, ly, "m dim", "\u00b7" * 26)
+        T(cx + 415, ly, "m b", f'<tspan fill="{C["ma"]}">{v:,}</tspan>', anchor="end")
+    y += 3 * LH + 14
 
-    # ---- layout constants
-    PAD = 22
-    HEAD_H = 58
-    ROW_Y = HEAD_H + 26          # first stat row baseline
-    COL_L, COL_LW = PAD, 300     # left panel (stats)
-    COL_R = PAD + COL_LW + 16    # right panel (languages)
-    COL_RW = W - COL_R - PAD
-    BODY_H = 6 * 27 + 14
-    STREAK_Y = ROW_Y + BODY_H + 18
-    STREAK_H = 92
-    HEAT_Y = STREAK_Y + STREAK_H + 18
-    weeks = user["contributionsCollection"]["contributionCalendar"]["weeks"]
-    gap = 3
-    # size cells so the grid spans the full content width
-    cell = max(7, int((W - 2 * PAD + gap) / len(weeks)) - gap)
-    HEAT_H = 22 + 7 * (cell + gap) + 22
-    H = HEAT_Y + HEAT_H + 14
-
-    o = []
-    a = o.append
-    a(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" '
-      f'viewBox="0 0 {W} {H}" role="img" aria-label="{esc(USER)} GitHub overview">')
-    a(f'''<style>
-    .h{{font:700 20px {FONT};fill:{TITLE}}}
-    .sec{{font:600 12px {FONT};fill:{MUTED};letter-spacing:.09em}}
-    .lbl{{font:400 14px {FONT};fill:{TEXT}}}
-    .val{{font:700 15px {FONT};fill:{ACCENT}}}
-    .big{{font:700 30px {FONT};fill:{TEXT}}}
-    .bigf{{font:700 34px {FONT};fill:{FLAME}}}
-    .cap{{font:600 12px {FONT};fill:{TITLE}}}
-    .sub{{font:400 11px {FONT};fill:{MUTED}}}
-    .foot{{font:400 11px {MONO};fill:{MUTED}}}
-    .fade{{opacity:0;animation:f .6s ease forwards}}
-    @keyframes f{{to{{opacity:1}}}}
-    @keyframes grow{{from{{transform:scaleX(0)}}to{{transform:scaleX(1)}}}}
-    </style>''')
-    a(f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="12" fill="{BG}" stroke="{BORDER}"/>')
-
-    # header
-    a(f'<text x="{PAD}" y="34" class="h">{esc(USER)} · GitHub Overview</text>')
-    a(f'<text x="{W-PAD}" y="34" class="sub" text-anchor="end">'
-      f'joined {datetime.datetime.fromisoformat(user["createdAt"].replace("Z","+00:00")).strftime("%b %Y")}</text>')
-    a(f'<line x1="{PAD}" y1="{HEAD_H-14}" x2="{W-PAD}" y2="{HEAD_H-14}" stroke="{BORDER}"/>')
-
-    # ---- left: stats
-    a(f'<text x="{COL_L}" y="{ROW_Y-8}" class="sec">ACTIVITY</text>')
-    y = ROW_Y + 22
-    for i, (ic, label, val) in enumerate(stats):
-        a(f'<g class="fade" style="animation-delay:{.06*i:.2f}s">'
-          f'<g transform="translate({COL_L+1},{y-12}) scale(.88)" fill="{TITLE}"><path d="{ICONS[ic]}"/></g>'
-          f'<text x="{COL_L+26}" y="{y}" class="lbl">{label}</text>'
-          f'<text x="{COL_L+COL_LW-10}" y="{y}" class="val" text-anchor="end">{val:,}</text></g>')
-        y += 27
-
-    # divider between columns
-    a(f'<line x1="{COL_R-8}" y1="{ROW_Y-24}" x2="{COL_R-8}" y2="{ROW_Y+BODY_H}" stroke="{BORDER}"/>')
-
-    # ---- right: languages
-    a(f'<text x="{COL_R}" y="{ROW_Y-8}" class="sec">MOST USED LANGUAGES</text>')
-    bar_y = ROW_Y + 12
-    bar_w = COL_RW
-    a(f'<clipPath id="bar"><rect x="{COL_R}" y="{bar_y}" width="{bar_w}" height="11" rx="5.5"/></clipPath>')
-    a(f'<g clip-path="url(#bar)">')
-    x = float(COL_R)
-    for name, color, pct in langs:
-        w = bar_w * pct / 100
-        a(f'<rect x="{x:.2f}" y="{bar_y}" width="{w:.2f}" height="11" fill="{color}" '
-          f'style="transform-origin:{x:.2f}px 0;animation:grow .9s ease-out"/>')
-        x += w
-    if x < COL_R + bar_w:
-        a(f'<rect x="{x:.2f}" y="{bar_y}" width="{COL_R+bar_w-x:.2f}" height="11" fill="{MUTED}" opacity=".35"/>')
-    a('</g>')
-
-    ly = bar_y + 34
+    # ---- block 2: languages
+    prompt(y, "langstat --top 6")
+    y += LH + 6
+    BAR = 20
     for i, (name, color, pct) in enumerate(langs):
-        cx = COL_R + (i % 2) * (COL_RW // 2)
-        if i % 2 == 0 and i:
-            ly += 26
-        a(f'<g class="fade" style="animation-delay:{.5+.05*i:.2f}s">'
-          f'<circle cx="{cx+5}" cy="{ly-4}" r="5" fill="{color}"/>'
-          f'<text x="{cx+17}" y="{ly}" class="lbl">{esc(name)} '
-          f'<tspan fill="{MUTED}">{pct:.1f}%</tspan></text></g>')
+        cx = X if i % 2 == 0 else COL2
+        ly = y + (i // 2) * LH
+        tee = "\u2514\u2500" if i // 2 == 2 else "\u251c\u2500"
+        filled = max(1, round(pct / 100 * BAR)) if pct > 0 else 0
+        T(cx, ly, "m dim", tee)
+        T(cx + 24, ly, "m fg", esc(name))
+        T(cx + 150, ly, "m",
+          f'<tspan fill="{color}">{"\u2588" * filled}</tspan>'
+          f'<tspan class="dim">{"\u2591" * (BAR - filled)}</tspan>')
+        T(cx + 415, ly, "m dim", f"{pct:.1f}%", anchor="end")
+    y += 3 * LH + 14
 
-    # ---- streak band
-    a(f'<rect x="{PAD}" y="{STREAK_Y}" width="{W-2*PAD}" height="{STREAK_H}" rx="9" '
-      f'fill="{PANEL}" stroke="{BORDER}"/>')
-    third = (W - 2 * PAD) / 3
+    # ---- block 3: streaks
+    prompt(y, "streak --summary")
+    y += LH + 6
     cells = [
-        (f"{contribs:,}", "Total contributions", "past 12 months", False),
-        (f"{cur}", "Current streak", fmt_short(*cur_rng) if cur else "no active streak", True),
-        (f"{best}", "Longest streak", fmt_short(*best_rng), False),
+        (f"{contribs:,}", "total contributions", "past 12 months", C["cy"]),
+        (f"{cur}", "current streak", fmt_short(*cur_rng) if cur else "no active streak", C["rd"]),
+        (f"{best}", "longest streak", fmt_short(*best_rng), C["ye"]),
     ]
-    for i, (big, cap, sub, flame) in enumerate(cells):
-        cx = PAD + third * (i + .5)
-        if flame:
-            a(f'<g transform="translate({cx-58},{STREAK_Y+26})">'
-              f'<circle cx="0" cy="16" r="20" fill="none" stroke="{FLAME}" stroke-width="2" opacity=".55">'
-              f'<animate attributeName="r" values="20;23;20" dur="3s" repeatCount="indefinite"/>'
-              f'<animate attributeName="opacity" values=".55;.15;.55" dur="3s" repeatCount="indefinite"/>'
-              f'</circle>'
-              f'<path transform="translate(-8,6) scale(1.05)" fill="{FLAME}" '
-              f'd="M8 0C8 0 3 4.5 3 9a5 5 0 0010 0c0-1.6-.9-3-1.8-4.1-.5.9-1.2 1.5-1.9 1.5C11.4 4.3 9.8 1.5 8 0z"/>'
-              f'</g>')
-            a(f'<text x="{cx+18}" y="{STREAK_Y+40}" class="bigf" text-anchor="middle">{big}</text>')
-            a(f'<text x="{cx+18}" y="{STREAK_Y+62}" class="cap" text-anchor="middle">{cap}</text>')
-            a(f'<text x="{cx+18}" y="{STREAK_Y+79}" class="sub" text-anchor="middle">{esc(sub)}</text>')
-        else:
-            a(f'<text x="{cx}" y="{STREAK_Y+38}" class="big" text-anchor="middle">{big}</text>')
-            a(f'<text x="{cx}" y="{STREAK_Y+60}" class="cap" text-anchor="middle">{cap}</text>')
-            a(f'<text x="{cx}" y="{STREAK_Y+77}" class="sub" text-anchor="middle">{esc(sub)}</text>')
-        if i:
-            lx = PAD + third * i
-            a(f'<line x1="{lx}" y1="{STREAK_Y+16}" x2="{lx}" y2="{STREAK_Y+STREAK_H-16}" stroke="{BORDER}"/>')
+    bw = (W - 2 * PAD - 16) / 3
+    for i, (big, cap, sub, col) in enumerate(cells):
+        bx = PAD + i * (bw + 8)
+        out.append(f'    <rect x="{bx:.0f}" y="{y-2}" width="{bw:.0f}" height="70" rx="6" '
+                   f'fill="#16161e" stroke="{C["border"]}"/>')
+        mid = bx + bw / 2
+        flame = '<tspan fill="' + C["rd"] + '"> \u25b2</tspan>' if i == 1 else ""
+        out.append(f'    <text x="{mid:.0f}" y="{y+30}" text-anchor="middle" '
+                   f'class="m big b" fill="{col}">{big}{flame}</text>')
+        T(mid, y + 48, "m dim", esc(cap), anchor="middle")
+        T(mid, y + 64, "m sm dim", esc(sub), anchor="middle")
+    y += 70 + 22
 
-    # ---- heatmap (last 53 weeks, drawn from the same calendar)
-    a(f'<text x="{PAD}" y="{HEAT_Y+10}" class="sec">CONTRIBUTION HEATMAP</text>')
+    # ---- block 4: heatmap
+    prompt(y, "heatmap --since 1y")
+    y += LH + 8
+    gap = 3
+    cell = max(7, int((W - 2 * PAD + gap) / len(weeks)) - gap)
     peak = max((d["contributionCount"] for w in weeks for d in w["contributionDays"]), default=0) or 1
     grid_w = len(weeks) * (cell + gap) - gap
     gx = PAD + (W - 2 * PAD - grid_w) / 2
-    gy = HEAT_Y + 22
     for wi, wk in enumerate(weeks):
         for d in wk["contributionDays"]:
             dow = datetime.date.fromisoformat(d["date"]).isoweekday() % 7
             n = d["contributionCount"]
-            # log scale: a 3-commit day should not look identical to a 40-commit day
             lvl = 0 if n == 0 else min(4, 1 + int(math.log1p(n) / math.log1p(peak) * 3.999))
-            a(f'<rect x="{gx+wi*(cell+gap):.1f}" y="{gy+dow*(cell+gap)}" width="{cell}" height="{cell}" '
-              f'rx="2" fill="{HEAT[lvl]}"><title>{d["date"]}: {n}</title></rect>')
-    # legend
-    lgx = W - PAD - 5 * (cell + gap) - 36
-    lgy = gy + 7 * (cell + gap) + 5
-    a(f'<text x="{lgx-6}" y="{lgy+9}" class="sub" text-anchor="end">less</text>')
+            out.append(f'    <rect x="{gx+wi*(cell+gap):.1f}" y="{y+dow*(cell+gap)}" '
+                       f'width="{cell}" height="{cell}" rx="1.5" fill="{HEAT[lvl]}">'
+                       f'<title>{d["date"]}: {n}</title></rect>')
+    y += 7 * (cell + gap) + 6
+    lgx = W - PAD - 5 * (cell + gap) - 38
+    T(lgx - 6, y + 9, "m sm dim", "less", anchor="end")
     for i, col in enumerate(HEAT):
-        a(f'<rect x="{lgx+i*(cell+gap)}" y="{lgy}" width="{cell}" height="{cell}" rx="2" fill="{col}"/>')
-    a(f'<text x="{lgx+5*(cell+gap)+2}" y="{lgy+9}" class="sub">more</text>')
-    a(f'<text x="{PAD}" y="{lgy+9}" class="foot">generated {datetime.date.today().isoformat()} '
-      f'by scripts/gen_stats.py</text>')
+        out.append(f'    <rect x="{lgx+i*(cell+gap)}" y="{y}" width="{cell}" height="{cell}" '
+                   f'rx="1.5" fill="{col}"/>')
+    T(lgx + 5 * (cell + gap) + 4, y + 9, "m sm dim", "more")
+    T(X, y + 9, "m sm dim",
+      f'generated {datetime.date.today().isoformat()} \u00b7 scripts/gen_stats.py')
+    y += cell + 14
 
-    a('</svg>')
-    return "\n".join(o)
+    # ---- trailing prompt
+    T(X, y + 14, "m", '<tspan class="gr b">\u279c</tspan><tspan class="cy b">  ~/dev</tspan>'
+      '<tspan class="dim"> git:(</tspan><tspan class="rd">main</tspan><tspan class="dim">) </tspan>')
+    out.append(f'    <rect x="{X+143}" y="{y+3}" width="8" height="14" fill="{C["fg"]}">'
+               f'<animate attributeName="opacity" values="1;1;0;0" dur="1.1s" '
+               f'repeatCount="indefinite"/></rect>')
+    H = y + 38
+
+    head = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="{esc(USER)} GitHub overview terminal">
+  <defs>
+    <clipPath id="sc"><rect x="1" y="1" width="{W-2}" height="{H-2}" rx="10"/></clipPath>
+    <style>
+      .m {{ font-family:\'JetBrains Mono\',\'Cascadia Code\',Consolas,\'DejaVu Sans Mono\',monospace; font-size:14px }}
+      .big {{ font-size:26px }} .sm {{ font-size:11px }}
+      .dim{{ fill:{C["dim"]} }} .fg {{ fill:{C["fg"]} }} .cy {{ fill:{C["cy"]} }}
+      .gr {{ fill:{C["gr"]} }} .rd {{ fill:{C["rd"]} }} .b {{ font-weight:700 }}
+    </style>
+  </defs>
+  <rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="10.5" fill="{C["bg"]}" stroke="{C["border"]}"/>
+  <g clip-path="url(#sc)">
+    <rect x="1" y="1" width="{W-2}" height="30" fill="{C["bar"]}"/>
+    <circle cx="22" cy="16" r="5.5" fill="#f7768e"/>
+    <circle cx="40" cy="16" r="5.5" fill="#e0af68"/>
+    <circle cx="58" cy="16" r="5.5" fill="#9ece6a"/>
+    <text x="{W/2}" y="21" class="m dim" text-anchor="middle">{esc(USER)}@earth: ~/dev \u2014 gh stats</text>
+'''
+    return head + "\n".join(out) + "\n  </g>\n</svg>\n"
 
 
 if __name__ == "__main__":
