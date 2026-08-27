@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 76" width="288" height="76" role="img" aria-label="web: s3hq4y.github.io">
+  <style>
+    .lbl { font-family:'JetBrains Mono','Cascadia Code',Consolas,monospace; font-size:13px; font-weight:700; letter-spacing:.08em }
+    .val { font-family:'JetBrains Mono','Cascadia Code',Consolas,monospace; font-size:14px; fill:#c0caf5 }
+  </style>
+  <rect x=".5" y=".5" width="287" height="75" rx="10"
+        fill="#7dcfff" fill-opacity=".10" stroke="#7dcfff" stroke-opacity=".5"/>
+  <g transform="translate(22,24) scale(1.15)" fill="#7dcfff"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm7.938 9h-3.32a15.6 15.6 0 00-1.23-4.36A9.03 9.03 0 0119.938 9zM12 2.04c.83 1.2 1.72 3.3 2.1 6.96H9.9c.38-3.66 1.27-5.76 2.1-6.96zM2.062 15A9.06 9.06 0 011.8 12c0-1.04.18-2.04.5-3h3.66A17.6 17.6 0 005.8 12c0 1.02.06 2.02.16 3H2.062zm.81 2h3.32c.28 1.6.7 3.08 1.23 4.36A9.03 9.03 0 012.872 17zm3.32-10h-3.32a9.03 9.03 0 014.55-4.36A15.6 15.6 0 006.192 7zM12 21.96c-.83-1.2-1.72-3.3-2.1-6.96h4.2c-.38 3.66-1.27 5.76-2.1 6.96zM14.34 13H9.66c-.1-.96-.16-1.96-.16-3s.06-2.04.16-3h4.68c.1.96.16 1.96.16 3s-.06 2.04-.16 3zm.72 8.36c.53-1.28.95-2.76 1.23-4.36h3.32a9.03 9.03 0 01-4.55 4.36zM18.34 15c.1-.98.16-1.98.16-3s-.06-2.02-.16-3h3.66c.32.96.5 1.96.5 3s-.18 2.04-.5 3h-3.66z"/></g>
+  <text x="72" y="33" class="lbl" fill="#7dcfff">WEB</text>
+  <text x="72" y="55" class="val">s3hq4y.github.io</text>
+</svg>

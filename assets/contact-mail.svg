@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 76" width="288" height="76" role="img" aria-label="mail: s9y@outlook.sg">
+  <style>
+    .lbl { font-family:'JetBrains Mono','Cascadia Code',Consolas,monospace; font-size:13px; font-weight:700; letter-spacing:.08em }
+    .val { font-family:'JetBrains Mono','Cascadia Code',Consolas,monospace; font-size:14px; fill:#c0caf5 }
+  </style>
+  <rect x=".5" y=".5" width="287" height="75" rx="10"
+        fill="#bb9af7" fill-opacity=".10" stroke="#bb9af7" stroke-opacity=".5"/>
+  <g transform="translate(22,24) scale(1.15)" fill="#bb9af7"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></g>
+  <text x="72" y="33" class="lbl" fill="#bb9af7">MAIL</text>
+  <text x="72" y="55" class="val">s9y@outlook.sg</text>
+</svg>
