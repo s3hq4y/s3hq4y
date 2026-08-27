@@ -2,9 +2,11 @@
 
 <img src="./assets/banner.svg" alt="s9y@earth — coding like it's 2050, debugging like it's 1999" width="100%" />
 
-<a href="https://s3hq4y.github.io"><img src="./assets/contact-web.svg" alt="web — s3hq4y.github.io" height="76" /></a>
-<a href="mailto:s9y@outlook.sg"><img src="./assets/contact-mail.svg" alt="mail — s9y@outlook.sg" height="76" /></a>
-<a href="https://discord.gg/HnmEeeNrKF"><img src="./assets/contact-discord.svg" alt="discord — join the server" height="76" /></a>
+<table border="0" cellspacing="0" cellpadding="0"><tr>
+<td><a href="https://s3hq4y.github.io"><img src="./assets/contact-web.svg" alt="web — s3hq4y.github.io" width="268" height="72" /></a></td>
+<td><a href="mailto:s9y@outlook.sg"><img src="./assets/contact-mail.svg" alt="mail — s9y@outlook.sg" width="268" height="72" /></a></td>
+<td><a href="https://discord.gg/HnmEeeNrKF"><img src="./assets/contact-discord.svg" alt="discord — join the server" width="268" height="72" /></a></td>
+</tr></table>
 
 <img src="./assets/about.svg" alt="about — name, location, what I'm building" width="900" />
 
