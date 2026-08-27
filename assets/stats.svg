@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="450" height="250" viewBox="0 0 450 250" role="img" aria-label="s3hq4y GitHub stats">
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="240" viewBox="0 0 450 240" role="img" aria-label="s3hq4y GitHub stats">
 <style>.t{font:600 18px "Segoe UI",Ubuntu,sans-serif;fill:#70a5fd}.l{font:400 14px "Segoe UI",Ubuntu,sans-serif;fill:#c9d1d9}.v{font:700 14px "Segoe UI",Ubuntu,sans-serif;fill:#bf91f3}.s{font:400 11px "Segoe UI",Ubuntu,sans-serif;fill:#8b93b3}.row{opacity:0;animation:fi .5s ease forwards}@keyframes fi{to{opacity:1}}</style>
-<rect x="0.5" y="0.5" width="449" height="249" rx="10" fill="#1a1b27" stroke="#2f3348"/>
+<rect x="0.5" y="0.5" width="449" height="239" rx="10" fill="#1a1b27" stroke="#2f3348"/>
 <text x="25" y="35" class="t">s3hq4y’s GitHub Stats</text>
 <line x1="25" y1="47" x2="425" y2="47" stroke="#2f3348"/>
 <g class="row" style="animation-delay:0.0s"><g transform="translate(27,62) scale(0.9)" fill="#70a5fd"><path d="M11.93 8.5a4 4 0 01-7.86 0H.75a.75.75 0 010-1.5h3.32a4 4 0 017.86 0h3.32a.75.75 0 010 1.5zM8 10a2 2 0 100-4 2 2 0 000 4z"/></g><text x="52" y="74" class="l">Total Commits</text><text x="425" y="74" class="v" text-anchor="end">633</text></g>

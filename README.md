@@ -106,15 +106,24 @@ const s9y = {
 
 ## 📊 GitHub Stats
 
+<table align="center" border="0">
+  <tr>
+    <td align="center" valign="top">
+      <img src="./assets/stats.svg" alt="GitHub stats" width="450" />
+    </td>
+    <td align="center" valign="top">
+      <img src="./assets/langs.svg" alt="Most used languages" width="380" />
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <img src="https://streak-stats.demolab.com?user=s3hq4y&hide_border=true&theme=tokyonight&border_radius=10&card_width=848" alt="Contribution streak" width="848" />
+    </td>
+  </tr>
+</table>
+
 <div align="center">
-
-<img src="./assets/stats.svg" alt="GitHub stats" height="220" />
-<img src="./assets/langs.svg" alt="Most used languages" height="220" />
-
-<a href="https://git.io/streak-stats"><img src="https://streak-stats.demolab.com?user=s3hq4y&hide_border=true&theme=tokyonight" alt="Streak" /></a>
-
 <sub>Cards are generated in-repo by <code>scripts/gen_stats.py</code> and refreshed daily by GitHub Actions — no third-party rate limits.</sub>
-
 </div>
 
 ---

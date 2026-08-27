@@ -52,19 +52,22 @@ ICONS = {  # tiny inline glyph paths (16x16 viewBox)
  "people": "M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.75 1.75 0 11-.5 3.428.75.75 0 10-.5 1.414 3.25 3.25 0 101-6.342z",
 }
 
+CARD_H = 240  # both cards share one canvas height so they align side by side
+
+
 def stats_card(u):
     total_stars = sum(n["stargazerCount"] for n in u["repositories"]["nodes"])
     c = u["contributionsCollection"]
     rows = [
         ("commit", "Total Commits", c["totalCommitContributions"] + c["restrictedContributionsCount"]),
         ("star",   "Total Stars",   total_stars),
-        ("repo",   "Public + Private Repos", u["repositories"]["totalCount"]),
+        ("repo",   "Repositories",   u["repositories"]["totalCount"]),
         ("pr",     "Total PRs",     u["pullRequests"]["totalCount"]),
         ("issue",  "Total Issues",  u["issues"]["totalCount"]),
         ("people", "Followers",     u["followers"]["totalCount"]),
     ]
     contribs = c["contributionCalendar"]["totalContributions"]
-    h = 60 + len(rows) * 26 + 34
+    h = CARD_H
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="450" height="{h}" viewBox="0 0 450 {h}" role="img" aria-label="{USER} GitHub stats">',
       f'<style>.t{{font:600 18px "Segoe UI",Ubuntu,sans-serif;fill:{TITLE}}}'
       f'.l{{font:400 14px "Segoe UI",Ubuntu,sans-serif;fill:{TEXT}}}'
@@ -75,14 +78,14 @@ def stats_card(u):
       f'<rect x="0.5" y="0.5" width="449" height="{h-1}" rx="10" fill="{BG}" stroke="{BORDER}"/>',
       f'<text x="25" y="35" class="t">{esc(USER)}\u2019s GitHub Stats</text>',
       f'<line x1="25" y1="47" x2="425" y2="47" stroke="{BORDER}"/>']
-    y = 74
+    y = 72
     for i, (ic, label, val) in enumerate(rows):
         parts.append(f'<g class="row" style="animation-delay:{0.1*i:.1f}s">'
             f'<g transform="translate(27,{y-12}) scale(0.9)" fill="{TITLE}"><path d="{ICONS[ic]}"/></g>'
             f'<text x="52" y="{y}" class="l">{label}</text>'
             f'<text x="425" y="{y}" class="v" text-anchor="end">{val}</text></g>')
-        y += 26
-    parts.append(f'<text x="25" y="{y+8}" class="s">{contribs} contributions in the last year '
+        y += 25
+    parts.append(f'<text x="25" y="{h-16}" class="s">{contribs} contributions in the last year '
                  f'\u00b7 updated {datetime.date.today().isoformat()}</text>')
     parts.append('</svg>')
     return "\n".join(parts)
@@ -95,7 +98,7 @@ def langs_card(u, top_n=7):
             agg[k] = agg.get(k, 0) + e["size"]
     total = sum(agg.values()) or 1
     top = sorted(agg.items(), key=lambda x: -x[1])[:top_n]
-    h = 92 + ((len(top) + 1) // 2) * 24 + 12
+    h = CARD_H
     p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="380" height="{h}" viewBox="0 0 380 {h}" role="img" aria-label="Most used languages">',
       f'<style>.t{{font:600 18px "Segoe UI",Ubuntu,sans-serif;fill:{TITLE}}}'
       f'.l{{font:400 12px "Segoe UI",Ubuntu,sans-serif;fill:{TEXT}}}</style>',
@@ -113,11 +116,13 @@ def langs_card(u, top_n=7):
     if x < 355:
         p.append(f'<rect x="{x:.2f}" y="62" width="{355-x:.2f}" height="10" fill="{MUTED}"/>')
     p.append('</g>')
-    y = 96
+    rows_n = (len(top) + 1) // 2
+    step = 26
+    y = 104
     for i, ((name, color), size) in enumerate(top):
         cx = 27 + (i % 2) * 168
         if i % 2 == 0 and i:
-            y += 24
+            y += step
         p.append(f'<circle cx="{cx+5}" cy="{y-4}" r="5" fill="{color}"/>'
                  f'<text x="{cx+16}" y="{y}" class="l">{esc(name)} {size*100/total:.1f}%</text>')
     p.append('</svg>')
