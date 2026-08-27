@@ -14,7 +14,7 @@ CURSOR = ('<tspan class="fg">\u2588<animate attributeName="opacity" values="1;1;
           'dur="1.1s" repeatCount="indefinite"/></tspan>')
 
 GROUPS = [
- ("languages", "#7dcfff", ["TypeScript", "JavaScript", "Python", "Go", "PHP", "SQL"]),
+ ("languages", "#7dcfff", ["TypeScript", "JavaScript", "Python", "Java", "C++", "C#", "Go", "PHP", "SQL"]),
  ("frontend",  "#9ece6a", ["React", "Next.js", "Vue", "Nuxt", "Angular", "Redux",
                            "React Native", "Tailwind", "SCSS", "Material-UI",
                            "Framer Motion", "GSAP", "PWA"]),
