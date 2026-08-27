@@ -12,6 +12,8 @@
 
 <img src="./assets/skills.svg" alt="Technical skills" width="900" />
 
+<img src="./assets/portal.svg" alt="featured project — portal: expose your VS Code workspace as a public MCP endpoint" width="900" />
+
 <img src="./assets/overview.svg" alt="GitHub stats, languages, streaks and contribution heatmap" width="900" />
 
 <img src="./assets/footer.svg" alt="git push origin main" width="900" />
