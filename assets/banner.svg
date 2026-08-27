@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" width="900" height="220" role="img" aria-label="Coding like it's 2050">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="50%" stop-color="#131a35"/>
+      <stop offset="100%" stop-color="#080d1c"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5865F2"/>
+      <stop offset="35%" stop-color="#00E5FF"/>
+      <stop offset="70%" stop-color="#00FF88"/>
+      <stop offset="100%" stop-color="#5865F2"/>
+      <animate attributeName="x1" values="-1;0;-1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="0;2;0" dur="6s" repeatCount="indefinite"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="900" height="220" rx="18" fill="url(#bg)"/>
+
+  <g stroke="#1e2a52" stroke-width="1" opacity="0.7">
+    <path d="M0 44H900M0 88H900M0 132H900M0 176H900"/>
+    <path d="M150 0V220M300 0V220M450 0V220M600 0V220M750 0V220"/>
+  </g>
+
+  <g fill="none" stroke="url(#ink)" stroke-width="2" opacity="0.8">
+    <path d="M40 180 C 160 120, 220 200, 330 130 S 520 60, 640 120 S 800 170, 870 110">
+      <animate attributeName="stroke-dasharray" values="0,1400;1400,0" dur="5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g filter="url(#glow)">
+    <text x="46" y="86" font-family="'Segoe UI',Inter,Helvetica,Arial,sans-serif" font-size="42" font-weight="700" fill="url(#ink)">
+      Coding like it&#8217;s 2050
+    </text>
+  </g>
+  <text x="48" y="122" font-family="'JetBrains Mono',Consolas,monospace" font-size="18" fill="#8fa3d8">
+    debugging like it&#8217;s 1999
+    <animate attributeName="opacity" values="0.45;1;0.45" dur="3s" repeatCount="indefinite"/>
+  </text>
+
+  <g font-family="'JetBrains Mono',Consolas,monospace" font-size="13" fill="#00FF88">
+    <text x="48" y="164">&gt; git push origin main</text>
+    <rect x="222" y="152" width="9" height="14" fill="#00FF88">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <g>
+    <circle cx="820" cy="70" r="26" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.9">
+      <animate attributeName="r" values="26;34;26" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0.2;0.9" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="820" cy="70" r="8" fill="#00FF88">
+      <animate attributeName="r" values="8;11;8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
