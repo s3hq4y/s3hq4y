@@ -181,35 +181,11 @@ def pixel_text(x, y, text, cell):
 def portal():
     L = []
     y = 78
-    L.append((y, prompt(y, "cat ./featured/portal.txt")))
-    y += LH + 8
-
-    KEY_X, VAL_X = X + 26, X + 170
-    rows = [
-        ("what",     "a VS Code extension that exposes your workspace as a public MCP endpoint", None),
-        ("why",      "deliberately minimal", "commands + file transfer, exactly five tools"),
-        ("tools",    "run_command", "start \u00b7 read \u00b7 stop \u00b7 file_transfer_info"),
-        ("files",    "HTTP API on the same tunnel & token", "download \u00b7 upload \u00b7 pack \u00b7 unpack"),
-        ("tunnels",  "cloudflare quick \u00b7 named", "ngrok reserved \u00b7 custom"),
-        ("extras",   "WSL-aware shells \u00b7 prompt templates \u00b7 error doctor", None),
-        ("license",  "MIT \u00b7 TypeScript \u00b7 VS Code extension", "github.com/s3hq4y/portal"),
-    ]
-    for i, (k, v, note) in enumerate(rows):
-        tee = "\u251c\u2500" if i < len(rows) - 1 else "\u2514\u2500"
-        L.append((y, f'    <text x="{X}" y="{y}" class="m dim">{tee}</text>'))
-        L.append((y, f'    <text x="{KEY_X}" y="{y}" class="m b bl">{esc(k)}</text>'))
-        frag = f'<tspan class="fg">{esc(v)}</tspan>'
-        if note:
-            frag += f'<tspan class="dim">  \u00b7 {esc(note)}</tspan>'
-        L.append((y, f'    <text x="{VAL_X}" y="{y}" class="m">{frag}</text>'))
-        y += LH
-
-    y += 10
     L.append((y, prompt(y, "portal --logo")))
     y += LH + 8
 
     LOGO_CELL, LETTER_CELL = 5, 8
-    logo_x, logo_y = 212, y                      # 32*5 + 36 + 35*8 = 476 wide
+    logo_x, logo_y = 212, y
     tx0 = logo_x + 32 * LOGO_CELL + 36
     ty0 = logo_y + (32 * LOGO_CELL - 7 * LETTER_CELL) // 2
     rects = pixel_grid(logo_x, logo_y, PORTAL_PIXEL, LOGO_CELL)
@@ -221,16 +197,6 @@ def portal():
                       f'<tspan class="dim"> \u2192 </tspan>'
                       f'<tspan class="cy">public MCP endpoint</tspan></text>'))
     y += 32 * LOGO_CELL + 14
-
-    L.append((y, prompt(y, "portal --status")))
-    y += LH + 6
-    L.append((y, f'    <text x="{X+26}" y="{y}" class="m">'
-                 f'<tspan class="gr">\u25cf tunnel online</tspan>'
-                 f'<tspan class="dim"> \u2192 </tspan>'
-                 f'<tspan class="cy">https://&lt;tunnel&gt;/mcp/&lt;token&gt;</tspan>'
-                 f'<tspan class="dim">  \u00b7  </tspan>'
-                 f'<tspan class="ye">this very update went through it</tspan></text>'))
-    y += LH + 12
 
     L.append((y, prompt(y, "", caret=True)))
     return shell("s9y@earth: ~/dev \u2014 featured: portal", L)
@@ -266,7 +232,7 @@ def footer():
 
 if __name__ == "__main__":
     os.makedirs(os.path.join(ROOT, "assets"), exist_ok=True)
-    for name, svg in (("about.svg", about()), ("portal.svg", portal()), ("footer.svg", footer())):
+    for name, svg in (("portal.svg", portal()), ("footer.svg", footer())):
         p = os.path.join(ROOT, "assets", name)
         with open(p, "w", encoding="utf-8") as f:
             f.write(svg)

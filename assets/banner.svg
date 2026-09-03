@@ -5,11 +5,7 @@
       <stop offset="50%" stop-color="#70a5fd" stop-opacity=".06"/>
       <stop offset="100%" stop-color="#70a5fd" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="logo" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#7dcfff"/>
-      <stop offset="55%" stop-color="#70a5fd"/>
-      <stop offset="100%" stop-color="#bb9af7"/>
-    </linearGradient>
+    
     <clipPath id="screen"><rect x="1" y="1" width="898" height="328" rx="10"/></clipPath>
     <style>
       .m  { font-family:'JetBrains Mono','Cascadia Code',Consolas,'DejaVu Sans Mono',monospace; font-size:14px }
@@ -32,55 +28,27 @@
       <animate attributeName="y" values="31;290;31" dur="9s" repeatCount="indefinite"/>
     </rect>
 
-    <!-- pixel-grid logo, drawn as real rects so it never depends on font metrics -->
-    <g fill="url(#logo)">
-      <rect x="46" y="52" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.03s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="58" y="52" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.06s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="70" y="52" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.09s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="82" y="52" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.12s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="34" y="64" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.00s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="34" y="76" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.00s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="46" y="88" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.03s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="58" y="88" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.06s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="70" y="88" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.09s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="82" y="100" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.12s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="82" y="112" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.12s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="34" y="124" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.00s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="46" y="124" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.03s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="58" y="124" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.06s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="70" y="124" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.09s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="130" y="52" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.18s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="142" y="52" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.21s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="154" y="52" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.24s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="118" y="64" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.15s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="166" y="64" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.27s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="118" y="76" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.15s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="166" y="76" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.27s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="130" y="88" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.18s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="142" y="88" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.21s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="154" y="88" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.24s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="166" y="88" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.27s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="166" y="100" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.27s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="154" y="112" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.24s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="130" y="124" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.18s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="142" y="124" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.21s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="202" y="52" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.30s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="250" y="52" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.42s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="202" y="64" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.30s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="250" y="64" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.42s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="202" y="76" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.30s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="250" y="76" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.42s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="214" y="88" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.33s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="226" y="88" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.36s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="238" y="88" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.39s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="250" y="88" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.42s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="250" y="100" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.42s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="250" y="112" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.42s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="214" y="124" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.33s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="226" y="124" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.36s" dur="0.3s" fill="freeze"/></rect>
-      <rect x="238" y="124" width="10" height="10" rx="2"><animate attributeName="opacity" from="0" to="1" begin="0.39s" dur="0.3s" fill="freeze"/></rect>
-    </g>
-    <text x="34" y="168" class="m dim">ship it · then polish</text>
+        <!-- ASCII art personal mark: s9y, plain monospace glyphs -->
+        <g font-family="'DejaVu Sans Mono','Liberation Mono','Courier New',monospace" font-size="14" xml:space="preserve" style="white-space: pre">
+          <animate attributeName="opacity" from="0" to="1" begin="0.3s" dur="0.3s" fill="freeze"/>
+          <text x="36" y="60" fill="#0f0f14">
+            <tspan x="34" dy="0">██████╗&#160;█████╗&#160;&#160;██╗&#160;&#160;&#160;██╗</tspan>
+            <tspan x="34" dy="16">██╔═══╝&#160;██╔══██╗╚██╗&#160;██╔╝</tspan>
+            <tspan x="34" dy="16">║█████╗&#160;║██████║&#160;╚████╔╝&#160;</tspan>
+            <tspan x="34" dy="16">╚═══██║&#160;╚═══██╔╝&#160;&#160;╚██╔╝&#160;&#160;</tspan>
+            <tspan x="34" dy="16">██████║&#160;█████╔╝&#160;&#160;&#160;&#160;██║&#160;&#160;&#160;</tspan>
+            <tspan x="34" dy="16">╚═════╝&#160;╚════╝&#160;&#160;&#160;&#160;&#160;╚═╝&#160;&#160;&#160;</tspan>
+          </text>
+          <text x="34" y="58" fill="#7dcfff">
+            <tspan x="34" dy="0">██████╗&#160;█████╗&#160;&#160;██╗&#160;&#160;&#160;██╗</tspan>
+            <tspan x="34" dy="16">██╔═══╝&#160;██╔══██╗╚██╗&#160;██╔╝</tspan>
+            <tspan x="34" dy="16">║█████╗&#160;║██████║&#160;╚████╔╝&#160;</tspan>
+            <tspan x="34" dy="16">╚═══██║&#160;╚═══██╔╝&#160;&#160;╚██╔╝&#160;&#160;</tspan>
+            <tspan x="34" dy="16">██████║&#160;█████╔╝&#160;&#160;&#160;&#160;██║&#160;&#160;&#160;</tspan>
+            <tspan x="34" dy="16">╚═════╝&#160;╚════╝&#160;&#160;&#160;&#160;&#160;╚═╝&#160;&#160;&#160;</tspan>
+          </text>
+        </g>
+        <text x="34" y="170" class="m dim">ship it · then polish</text>
 
     <g class="m">
       <text x="404" y="72"><tspan class="bl b">s9y</tspan><tspan class="dim">@</tspan><tspan class="bl b">earth</tspan></text>
