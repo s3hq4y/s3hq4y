@@ -33,15 +33,15 @@
     <text x="30" y="103" class="m dim">├─</text>
     <text x="54" y="103" class="m fg">commits</text>
     <text x="180" y="103" class="m dim">··························</text>
-    <text x="445" y="103" text-anchor="end" class="m b"><tspan fill="#b9ffb9">712</tspan></text>
+    <text x="445" y="103" text-anchor="end" class="m b"><tspan fill="#b9ffb9">721</tspan></text>
     <text x="466" y="103" class="m dim">├─</text>
     <text x="490" y="103" class="m fg">stars</text>
     <text x="616" y="103" class="m dim">··························</text>
-    <text x="881" y="103" text-anchor="end" class="m b"><tspan fill="#b9ffb9">11</tspan></text>
+    <text x="881" y="103" text-anchor="end" class="m b"><tspan fill="#b9ffb9">13</tspan></text>
     <text x="30" y="122" class="m dim">├─</text>
     <text x="54" y="122" class="m fg">public_repos</text>
     <text x="180" y="122" class="m dim">··························</text>
-    <text x="445" y="122" text-anchor="end" class="m b"><tspan fill="#b9ffb9">5</tspan></text>
+    <text x="445" y="122" text-anchor="end" class="m b"><tspan fill="#b9ffb9">6</tspan></text>
     <text x="466" y="122" class="m dim">├─</text>
     <text x="490" y="122" class="m fg">pull_reqs</text>
     <text x="616" y="122" class="m dim">··························</text>
@@ -57,41 +57,41 @@
     <text x="30" y="174" class="m"><tspan class="gr b">&gt;</tspan><tspan class="cy b">  ~/dev</tspan><tspan class="dim">&#160;git:(</tspan><tspan class="rd">main</tspan><tspan class="dim">)&#160;</tspan><tspan class="fg">langstat --top 6</tspan></text>
     <text x="30" y="199" class="m dim">├─</text>
     <text x="54" y="199" class="m fg">TypeScript</text>
-    <text x="180" y="199" class="m"><tspan fill="#7dff7d">█████████████</tspan><tspan class="dim">░░░░░░░</tspan></text>
-    <text x="445" y="199" text-anchor="end" class="m dim">67.5%</text>
+    <text x="180" y="199" class="m"><tspan fill="#7dff7d">█████████████████</tspan><tspan class="dim">░░░</tspan></text>
+    <text x="445" y="199" text-anchor="end" class="m dim">82.5%</text>
     <text x="466" y="199" class="m dim">├─</text>
-    <text x="490" y="199" class="m fg">Vue</text>
+    <text x="490" y="199" class="m fg">JavaScript</text>
     <text x="616" y="199" class="m"><tspan fill="#5fff5f">██</tspan><tspan class="dim">░░░░░░░░░░░░░░░░░░</tspan></text>
-    <text x="881" y="199" text-anchor="end" class="m dim">12.1%</text>
+    <text x="881" y="199" text-anchor="end" class="m dim">11.8%</text>
     <text x="30" y="218" class="m dim">├─</text>
-    <text x="54" y="218" class="m fg">JavaScript</text>
-    <text x="180" y="218" class="m"><tspan fill="#4dcc4d">██</tspan><tspan class="dim">░░░░░░░░░░░░░░░░░░</tspan></text>
-    <text x="445" y="218" text-anchor="end" class="m dim">11.4%</text>
+    <text x="54" y="218" class="m fg">Vue</text>
+    <text x="180" y="218" class="m"><tspan fill="#4dcc4d">█</tspan><tspan class="dim">░░░░░░░░░░░░░░░░░░░</tspan></text>
+    <text x="445" y="218" text-anchor="end" class="m dim">2.4%</text>
     <text x="466" y="218" class="m dim">├─</text>
     <text x="490" y="218" class="m fg">CSS</text>
     <text x="616" y="218" class="m"><tspan fill="#2f9e2f">█</tspan><tspan class="dim">░░░░░░░░░░░░░░░░░░░</tspan></text>
-    <text x="881" y="218" text-anchor="end" class="m dim">4.0%</text>
+    <text x="881" y="218" text-anchor="end" class="m dim">1.5%</text>
     <text x="30" y="237" class="m dim">└─</text>
     <text x="54" y="237" class="m fg">Python</text>
     <text x="180" y="237" class="m"><tspan fill="#2a842a">█</tspan><tspan class="dim">░░░░░░░░░░░░░░░░░░░</tspan></text>
-    <text x="445" y="237" text-anchor="end" class="m dim">3.4%</text>
+    <text x="445" y="237" text-anchor="end" class="m dim">0.7%</text>
     <text x="466" y="237" class="m dim">└─</text>
-    <text x="490" y="237" class="m fg">HTML</text>
+    <text x="490" y="237" class="m fg">Tree-sitter Query</text>
     <text x="616" y="237" class="m"><tspan fill="#236b23">█</tspan><tspan class="dim">░░░░░░░░░░░░░░░░░░░</tspan></text>
-    <text x="881" y="237" text-anchor="end" class="m dim">1.7%</text>
+    <text x="881" y="237" text-anchor="end" class="m dim">0.7%</text>
     <text x="30" y="270" class="m"><tspan class="gr b">&gt;</tspan><tspan class="cy b">  ~/dev</tspan><tspan class="dim">&#160;git:(</tspan><tspan class="rd">main</tspan><tspan class="dim">)&#160;</tspan><tspan class="fg">streak --summary</tspan></text>
     <rect x="26" y="293" width="277" height="70" rx="3" fill="#0c150c" stroke="#1c421c"/>
-    <text x="165" y="325" text-anchor="middle" class="m big b" fill="#7dff7d">734</text>
+    <text x="165" y="325" text-anchor="middle" class="m big b" fill="#7dff7d">744</text>
     <text x="165" y="343" text-anchor="middle" class="m dim">total contributions</text>
     <text x="165" y="359" text-anchor="middle" class="m sm dim">past 12 months</text>
     <rect x="311" y="293" width="277" height="70" rx="3" fill="#0c150c" stroke="#1c421c"/>
-    <text x="450" y="325" text-anchor="middle" class="m big b" fill="#6bff6b">17<tspan fill="#6bff6b"> ↑</tspan></text>
+    <text x="450" y="325" text-anchor="middle" class="m big b" fill="#6bff6b">18<tspan fill="#6bff6b"> ↑</tspan></text>
     <text x="450" y="343" text-anchor="middle" class="m dim">current streak</text>
-    <text x="450" y="359" text-anchor="middle" class="m sm dim">Aug 18 – Sep 3, 2026</text>
+    <text x="450" y="359" text-anchor="middle" class="m sm dim">Aug 18 – Sep 4, 2026</text>
     <rect x="597" y="293" width="277" height="70" rx="3" fill="#0c150c" stroke="#1c421c"/>
-    <text x="735" y="325" text-anchor="middle" class="m big b" fill="#ccff99">17</text>
+    <text x="735" y="325" text-anchor="middle" class="m big b" fill="#ccff99">18</text>
     <text x="735" y="343" text-anchor="middle" class="m dim">longest streak</text>
-    <text x="735" y="359" text-anchor="middle" class="m sm dim">Aug 18 – Sep 3, 2026</text>
+    <text x="735" y="359" text-anchor="middle" class="m sm dim">Aug 18 – Sep 4, 2026</text>
     <text x="30" y="387" class="m"><tspan class="gr b">&gt;</tspan><tspan class="cy b">  ~/dev</tspan><tspan class="dim">&#160;git:(</tspan><tspan class="rd">main</tspan><tspan class="dim">)&#160;</tspan><tspan class="fg">heatmap --since 1y</tspan></text>
     <rect x="27.5" y="414" width="13" height="13" rx="1.5" fill="#0c150c"><title>2025-08-31: 0</title></rect>
     <rect x="27.5" y="430" width="13" height="13" rx="1.5" fill="#0c150c"><title>2025-09-01: 0</title></rect>
@@ -462,6 +462,7 @@
     <rect x="859.5" y="446" width="13" height="13" rx="1.5" fill="#7dff7d"><title>2026-09-01: 26</title></rect>
     <rect x="859.5" y="462" width="13" height="13" rx="1.5" fill="#7dff7d"><title>2026-09-02: 13</title></rect>
     <rect x="859.5" y="478" width="13" height="13" rx="1.5" fill="#7dff7d"><title>2026-09-03: 5</title></rect>
+    <rect x="859.5" y="494" width="13" height="13" rx="1.5" fill="#7dff7d"><title>2026-09-04: 10</title></rect>
     <text x="734" y="541" text-anchor="end" class="m sm dim">0</text>
     <rect x="740" y="532" width="13" height="13" rx="1.5" fill="#0c150c"/>
     <rect x="756" y="532" width="13" height="13" rx="1.5" fill="#0f2a0f"/>
@@ -470,7 +471,7 @@
     <rect x="804" y="532" width="13" height="13" rx="1.5" fill="#4dcc4d"/>
     <rect x="820" y="532" width="13" height="13" rx="1.5" fill="#7dff7d"/>
     <text x="840" y="541" class="m sm dim">5+</text>
-    <text x="30" y="541" class="m sm dim">generated 2026-09-03 · scripts/gen_stats.py</text>
+    <text x="30" y="541" class="m sm dim">generated 2026-09-04 · scripts/gen_stats.py</text>
     <text x="30" y="573" class="m"><tspan class="gr b">&gt;</tspan><tspan class="cy b">  ~/dev</tspan><tspan class="dim">&#160;git:(</tspan><tspan class="rd">main</tspan><tspan class="dim">)&#160;</tspan><tspan class="fg"></tspan><tspan class="fg">█<animate attributeName="opacity" values="1;1;0;0" dur="1.1s" repeatCount="indefinite"/></tspan></text>
     </g>
     <g filter="url(#ph-o)"><rect x="21" y="20.5" width="5" height="5" fill="#2f7a2f"/><text x="32" y="29" class="sm" fill="#2f7a2f" letter-spacing=".08em">VAULT-TEC DB</text><line x1="118" y1="26" x2="321" y2="26" stroke="#1c421c" stroke-width="1"/><rect x="118" y="24.5" width="3" height="3" fill="#1c421c"/><rect x="318" y="24.5" width="3" height="3" fill="#1c421c"/><line x1="579" y1="26" x2="782" y2="26" stroke="#1c421c" stroke-width="1"/><rect x="579" y="24.5" width="3" height="3" fill="#1c421c"/><rect x="779" y="24.5" width="3" height="3" fill="#1c421c"/><text x="450.0" y="29" text-anchor="middle" font-family="'Fixedsys Core','Fixedsys Excelsior 3.01','DejaVu Sans Mono','Courier New',monospace" font-size="13" fill="#4dff4d" letter-spacing=".14em">S3HQ4Y@EARTH — GH STATS</text><circle cx="834" cy="25" r="5.5" fill="#4dff4d" opacity=".18"><animate attributeName="opacity" values=".18;.05;.18" dur="2.8s" repeatCount="indefinite"/></circle><circle cx="834" cy="25" r="2.6" fill="#4dff4d"><animate attributeName="opacity" values="1;.45;1" dur="2.8s" repeatCount="indefinite"/></circle><text x="843" y="29" class="sm" fill="#2f7a2f">PWR</text></g><line x1="9" y1="43" x2="891" y2="43" stroke="#2f7a2f" stroke-width="1"/><line x1="9" y1="45" x2="891" y2="45" stroke="#1c421c" stroke-width="1"/>
