@@ -37,7 +37,7 @@
     <text x="466" y="103" class="m dim">├─</text>
     <text x="490" y="103" class="m fg">stars</text>
     <text x="616" y="103" class="m dim">··························</text>
-    <text x="881" y="103" text-anchor="end" class="m b"><tspan fill="#b9ffb9">16</tspan></text>
+    <text x="881" y="103" text-anchor="end" class="m b"><tspan fill="#b9ffb9">20</tspan></text>
     <text x="30" y="122" class="m dim">├─</text>
     <text x="54" y="122" class="m fg">public_repos</text>
     <text x="180" y="122" class="m dim">··························</text>
@@ -53,7 +53,7 @@
     <text x="466" y="141" class="m dim">└─</text>
     <text x="490" y="141" class="m fg">followers</text>
     <text x="616" y="141" class="m dim">··························</text>
-    <text x="881" y="141" text-anchor="end" class="m b"><tspan fill="#b9ffb9">3</tspan></text>
+    <text x="881" y="141" text-anchor="end" class="m b"><tspan fill="#b9ffb9">5</tspan></text>
     <text x="30" y="174" class="m"><tspan class="gr b">&gt;</tspan><tspan class="cy b">  ~/dev</tspan><tspan class="dim">&#160;git:(</tspan><tspan class="rd">main</tspan><tspan class="dim">)&#160;</tspan><tspan class="fg">langstat --top 6</tspan></text>
     <text x="30" y="199" class="m dim">├─</text>
     <text x="54" y="199" class="m fg">TypeScript</text>
