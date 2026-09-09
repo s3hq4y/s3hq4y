@@ -4,6 +4,8 @@
 
 <a href="https://github.com/s3hq4y/portal"><img src="./assets/portal.svg" alt="featured project — portal: expose your VS Code workspace as a public MCP endpoint" width="900" /></a>
 
+<a href="https://github.com/s3hq4y/wibe"><img src="./assets/wibe.svg" alt="featured project — wibe: vibe coding with a custom agent ext. and a local browser-backed agent" width="900" /></a>
+
 <table border="0" cellspacing="0" cellpadding="0"><tr>
 <td><a href="https://s3hq4y.github.io"><img src="./assets/contact-web.svg" alt="web — s3hq4y.github.io" width="268" height="72" /></a></td>
 <td><a href="mailto:s9y@outlook.sg"><img src="./assets/contact-mail.svg" alt="mail — s9y@outlook.sg" width="268" height="72" /></a></td>
