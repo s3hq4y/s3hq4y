@@ -1,6 +1,6 @@
 <div align="center">
 
-# S9Y
+# Christina
 
 **INDEPENDENT DEVELOPER · DIGITAL CRAFT**
 
@@ -11,6 +11,8 @@
 </div>
 
 ---
+
+<img src="./assets/banner.png" alt="Christina banner" width="100%" />
 
 <img src="./assets/stats.svg" alt="GitHub statistics and language distribution" width="100%" />
 

@@ -18,6 +18,7 @@ ASSETS = ROOT / "assets"
 QUERY = """
 query($login:String!){
   user(login:$login){
+    name
     createdAt
     followers{totalCount}
     repositories(first:100, ownerAffiliations:OWNER, isFork:false, privacy:PUBLIC){
@@ -42,12 +43,12 @@ query($login:String!){
 }
 """
 
-BG = "#ffffff"
-INK = "#171717"
-MUTED = "#777777"
-LINE = "#d8d8d8"
-RED = "#e53935"
-PALETTE = ["#f1f1f1", "#dedede", "#b5b5b5", "#777777", "#292929", RED]
+BG = "#111114"
+INK = "#f2f0f0"
+MUTED = "#a09a9f"
+LINE = "#363238"
+RED = "#ff4655"
+PALETTE = ["#29262b", "#49232a", "#70252f", "#a52b38", "#d93645", RED]
 FONT = "Arial, Helvetica, sans-serif"
 
 
@@ -141,6 +142,7 @@ def collect(user):
     days = flat_days(weeks)
     current, current_range, best, best_range = streaks(days)
     return {
+        "display_name": (user.get("name") or "Christina!"),
         "stats": [
             ("COMMITS", contribution["totalCommitContributions"] + contribution["restrictedContributionsCount"]),
             ("STARS", sum(repo["stargazerCount"] for repo in user["repositories"]["nodes"])),
@@ -189,16 +191,16 @@ def render_stats(data, username):
     width, height = 960, 430
     out = svg_start(
         width, height,
-        f"{username} GitHub statistics",
+        f"{data['display_name']} GitHub statistics",
         "GitHub activity metrics, language distribution, and contribution streaks.",
     )
     out += [
-        '<rect x="0" y="0" width="8" height="430" fill="#e53935"/>',
-        text(32, 38, "GITHUB / PROFILE", 11, 700, RED, spacing=1.8),
+        f'<rect x="0" y="0" width="8" height="430" fill="{RED}"/>',
+        text(32, 38, f"{data['display_name'].upper()} / PROFILE", 11, 700, RED, spacing=1.8),
         text(32, 78, "Statistics", 34, 700),
-        text(928, 42, username.upper(), 11, 700, MUTED, "end", 1.4),
+        text(928, 42, data["display_name"].upper(), 11, 700, MUTED, "end", 1.4),
         text(928, 64, f"UPDATED {data['generated']}", 10, 400, MUTED, "end"),
-        '<line x1="32" y1="98" x2="928" y2="98" stroke="#171717" stroke-width="2"/>',
+        f'<line x1="32" y1="98" x2="928" y2="98" stroke="{INK}" stroke-width="2"/>',
     ]
 
     metrics = data["stats"]
@@ -244,7 +246,7 @@ def render_stats(data, username):
         out.append(text(32, 365, "No language data available", 12, 400, MUTED))
 
     out += [
-        '<line x1="32" y1="414" x2="928" y2="414" stroke="#171717"/>',
+        f'<line x1="32" y1="414" x2="928" y2="414" stroke="{INK}"/>',
         text(32, 426, f"CURRENT STREAK  {data['cur']} DAYS  /  {data['cur_sub']}", 9, 700, MUTED),
         text(928, 426, f"LONGEST  {data['best']} DAYS  /  {data['best_sub']}", 9, 700, MUTED, "end"),
         "</g></svg>",
@@ -262,11 +264,11 @@ def render_heatmap(data, username):
     height = 220
     out = svg_start(
         width, height,
-        f"{username} contribution heatmap",
+        f"{data['display_name']} contribution heatmap",
         f"{data['contribs']} contributions in the displayed contribution calendar.",
     )
     out += [
-        text(24, 34, "CONTRIBUTION CALENDAR", 11, 700, RED, spacing=1.5),
+        text(24, 34, f"{data['display_name'].upper()} / CONTRIBUTION CALENDAR", 11, 700, RED, spacing=1.5),
         text(24, 61, f"{data['contribs']:,}", 25, 700),
         text(105, 60, "TOTAL CONTRIBUTIONS", 10, 700, MUTED, spacing=0.8),
     ]
@@ -304,7 +306,7 @@ def render_heatmap(data, username):
         )
     out += [
         text(legend_x + 6 * 17 + 3, legend_y + 9, "MORE", 8, 600, MUTED),
-        text(width - 24, 34, f"{data['generated']}  /  {username}", 9, 600, MUTED, "end"),
+        text(width - 24, 34, f"{data['generated']}  /  {data['display_name']}", 9, 600, MUTED, "end"),
         "</g></svg>",
     ]
     return "\n".join(out) + "\n"
