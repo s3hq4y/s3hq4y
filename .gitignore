@@ -1,1 +1,4 @@
 .vscode/
+.portal/
+__pycache__/
+*.py[cod]

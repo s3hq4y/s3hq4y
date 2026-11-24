@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="430" viewBox="0 0 960 430" role="img" aria-labelledby="title desc">
+<title id="title">s3hq4y GitHub statistics</title>
+<desc id="desc">GitHub activity metrics, language distribution, and contribution streaks.</desc>
+<rect width="960" height="430" fill="#ffffff"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#171717">
+<rect x="0" y="0" width="8" height="430" fill="#e53935"/>
+<text x="32" y="38" font-size="11" font-weight="700" fill="#e53935" letter-spacing="1.8">GITHUB / PROFILE</text>
+<text x="32" y="78" font-size="34" font-weight="700" fill="#171717">Statistics</text>
+<text x="928" y="42" font-size="11" font-weight="700" fill="#777777" text-anchor="end" letter-spacing="1.4">S3HQ4Y</text>
+<text x="928" y="64" font-size="10" font-weight="400" fill="#777777" text-anchor="end">UPDATED 2026-11-25</text>
+<line x1="32" y1="98" x2="928" y2="98" stroke="#171717" stroke-width="2"/>
+<text x="32" y="133" font-size="10" font-weight="700" fill="#777777" letter-spacing="0.8">01 / COMMITS</text>
+<text x="32" y="174" font-size="31" font-weight="700" fill="#e53935">1,327</text>
+<line x1="32" y1="188" x2="320" y2="188" stroke="#d8d8d8"/>
+<text x="336" y="133" font-size="10" font-weight="700" fill="#777777" letter-spacing="0.8">02 / STARS</text>
+<text x="336" y="174" font-size="31" font-weight="700" fill="#171717">27</text>
+<line x1="336" y1="188" x2="624" y2="188" stroke="#d8d8d8"/>
+<text x="640" y="133" font-size="10" font-weight="700" fill="#777777" letter-spacing="0.8">03 / PUBLIC REPOSITORIES</text>
+<text x="640" y="174" font-size="31" font-weight="700" fill="#171717">9</text>
+<line x1="640" y1="188" x2="928" y2="188" stroke="#d8d8d8"/>
+<text x="32" y="221" font-size="10" font-weight="700" fill="#777777" letter-spacing="0.8">04 / PULL REQUESTS</text>
+<text x="32" y="262" font-size="31" font-weight="700" fill="#171717">29</text>
+<line x1="32" y1="276" x2="320" y2="276" stroke="#d8d8d8"/>
+<text x="336" y="221" font-size="10" font-weight="700" fill="#777777" letter-spacing="0.8">05 / ISSUES</text>
+<text x="336" y="262" font-size="31" font-weight="700" fill="#171717">19</text>
+<line x1="336" y1="276" x2="624" y2="276" stroke="#d8d8d8"/>
+<text x="640" y="221" font-size="10" font-weight="700" fill="#777777" letter-spacing="0.8">06 / FOLLOWERS</text>
+<text x="640" y="262" font-size="31" font-weight="700" fill="#171717">9</text>
+<line x1="640" y1="276" x2="928" y2="276" stroke="#d8d8d8"/>
+<text x="32" y="326" font-size="11" font-weight="700" fill="#171717" letter-spacing="1.1">LANGUAGE DISTRIBUTION</text>
+<text x="928" y="326" font-size="9" font-weight="400" fill="#777777" text-anchor="end" letter-spacing="0.8">TOP 6 BY CODE SIZE</text>
+<rect x="32.00" y="340" width="625.62" height="8" fill="#3178c6"/>
+<rect x="660.62" y="340" width="91.12" height="8" fill="#41b883"/>
+<rect x="754.74" y="340" width="43.41" height="8" fill="#663399"/>
+<rect x="801.15" y="340" width="32.10" height="8" fill="#3572A5"/>
+<rect x="836.25" y="340" width="31.62" height="8" fill="#f1e05a"/>
+<rect x="870.86" y="340" width="27.53" height="8" fill="#e34c26"/>
+<rect x="32" y="363" width="7" height="7" fill="#3178c6"/>
+<text x="46" y="371" font-size="11" font-weight="600" fill="#171717">TypeScript</text>
+<text x="320" y="371" font-size="10" font-weight="400" fill="#777777" text-anchor="end">71.0%</text>
+<rect x="336" y="363" width="7" height="7" fill="#41b883"/>
+<text x="350" y="371" font-size="11" font-weight="600" fill="#171717">Vue</text>
+<text x="624" y="371" font-size="10" font-weight="400" fill="#777777" text-anchor="end">10.3%</text>
+<rect x="640" y="363" width="7" height="7" fill="#663399"/>
+<text x="654" y="371" font-size="11" font-weight="600" fill="#171717">CSS</text>
+<text x="928" y="371" font-size="10" font-weight="400" fill="#777777" text-anchor="end">4.9%</text>
+<rect x="32" y="387" width="7" height="7" fill="#3572A5"/>
+<text x="46" y="395" font-size="11" font-weight="600" fill="#171717">Python</text>
+<text x="320" y="395" font-size="10" font-weight="400" fill="#777777" text-anchor="end">3.6%</text>
+<rect x="336" y="387" width="7" height="7" fill="#f1e05a"/>
+<text x="350" y="395" font-size="11" font-weight="600" fill="#171717">JavaScript</text>
+<text x="624" y="395" font-size="10" font-weight="400" fill="#777777" text-anchor="end">3.6%</text>
+<rect x="640" y="387" width="7" height="7" fill="#e34c26"/>
+<text x="654" y="395" font-size="11" font-weight="600" fill="#171717">HTML</text>
+<text x="928" y="395" font-size="10" font-weight="400" fill="#777777" text-anchor="end">3.1%</text>
+<line x1="32" y1="414" x2="928" y2="414" stroke="#171717"/>
+<text x="32" y="426" font-size="9" font-weight="700" fill="#777777">CURRENT STREAK  0 DAYS  /  —</text>
+<text x="928" y="426" font-size="9" font-weight="700" fill="#777777" text-anchor="end">LONGEST  24 DAYS  /  Oct 18 – Nov 10, 2026</text>
+</g></svg>

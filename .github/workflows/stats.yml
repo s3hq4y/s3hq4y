@@ -17,18 +17,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Generate overview card
+
+      - name: Generate GitHub statistics
         env:
-          # public-only stats: the default token is sufficient, no PAT needed
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/gen_stats.py ${{ github.repository_owner }}
-      - name: Commit if changed
+        run: python scripts/gen_stats.py "${{ github.repository_owner }}"
+
+      - name: Commit updated SVGs
         run: |
-          git config user.name  "github-actions[bot]"
+          git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/overview.svg
-          git diff --staged --quiet || git commit -m "chore: refresh stats cards [skip ci]"
+          git add assets/stats.svg assets/heatmap.svg
+          git diff --staged --quiet || git commit -m "chore: refresh GitHub stats [skip ci]"
           git push
