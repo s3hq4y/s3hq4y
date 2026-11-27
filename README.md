@@ -12,7 +12,7 @@
 
 ---
 
-<img src="./assets/banner.png" alt="Christina banner" width="100%" />
+<img src="./assets/banner.webp" alt="Christina banner" width="100%" />
 
 <img src="./assets/stats.svg" alt="GitHub statistics and language distribution" width="100%" />
 
