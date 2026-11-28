@@ -188,42 +188,40 @@ def text(x, y, value, size=13, weight=400, fill=INK, anchor=None, spacing=None):
 
 
 def render_stats(data, username):
-    width, height = 960, 430
+    width, height = 960, 324
     out = svg_start(
         width, height,
         f"{data['display_name']} GitHub statistics",
         "GitHub activity metrics, language distribution, and contribution streaks.",
     )
     out += [
-        f'<rect x="0" y="0" width="8" height="430" fill="{RED}"/>',
         text(32, 38, f"{data['display_name'].upper()} / PROFILE", 11, 700, RED, spacing=1.8),
         text(32, 78, "Statistics", 34, 700),
-        text(928, 42, data["display_name"].upper(), 11, 700, MUTED, "end", 1.4),
+        text(928, 42, data["display_name"], 11, 700, MUTED, "end", 0.5),
         text(928, 64, f"UPDATED {data['generated']}", 10, 400, MUTED, "end"),
         f'<line x1="32" y1="98" x2="928" y2="98" stroke="{INK}" stroke-width="2"/>',
     ]
 
     metrics = data["stats"]
-    cell_w, cell_h = 288, 76
+    cell_w = 146
     start_x, start_y = 32, 120
     for index, (label, value) in enumerate(metrics):
-        col, row = index % 3, index // 3
-        x = start_x + col * 304
-        y = start_y + row * 88
+        x = start_x + index * 150
+        y = start_y
         out += [
-            text(x, y + 13, f"{index + 1:02d} / {label}", 10, 700, MUTED, spacing=0.8),
-            text(x, y + 54, f"{value:,}", 31, 700, RED if index == 0 else INK),
-            f'<line x1="{x}" y1="{y + 68}" x2="{x + cell_w}" y2="{y + 68}" stroke="{LINE}"/>',
+            text(x, y + 11, f"{index + 1:02d} / {label}", 9, 700, MUTED, spacing=0.5),
+            text(x, y + 40, f"{value:,}", 22, 700, RED if index == 0 else INK),
+            f'<line x1="{x}" y1="{y + 52}" x2="{x + cell_w}" y2="{y + 52}" stroke="{LINE}"/>',
         ]
 
     out += [
-        text(32, 326, "LANGUAGE DISTRIBUTION", 11, 700, INK, spacing=1.1),
-        text(928, 326, "TOP 6 BY CODE SIZE", 9, 400, MUTED, "end", 0.8),
+        text(32, 220, "LANGUAGE DISTRIBUTION", 11, 700, INK, spacing=1.1),
+        text(928, 220, "TOP 6 BY CODE SIZE", 9, 400, MUTED, "end", 0.8),
     ]
 
     langs = data["langs"]
     if langs:
-        x0, y0, total_w, gap = 32, 340, 896, 3
+        x0, y0, total_w, gap = 32, 234, 896, 3
         available = total_w - gap * (len(langs) - 1)
         for name, color, pct in langs:
             segment = available * pct / 100
@@ -231,7 +229,7 @@ def render_stats(data, username):
                 f'<rect x="{x0:.2f}" y="{y0}" width="{max(0, segment):.2f}" height="8" fill="{esc(color)}"/>'
             )
             x0 += segment + gap
-        label_y = 372
+        label_y = 266
         for index, (name, _color, pct) in enumerate(langs):
             col = index % 3
             row = index // 3
@@ -243,12 +241,12 @@ def render_stats(data, username):
                 text(x + 288, y - 1, f"{pct:.1f}%", 10, 400, MUTED, "end"),
             ]
     else:
-        out.append(text(32, 365, "No language data available", 12, 400, MUTED))
+        out.append(text(32, 259, "No language data available", 12, 400, MUTED))
 
     out += [
-        f'<line x1="32" y1="414" x2="928" y2="414" stroke="{INK}"/>',
-        text(32, 426, f"CURRENT STREAK  {data['cur']} DAYS  /  {data['cur_sub']}", 9, 700, MUTED),
-        text(928, 426, f"LONGEST  {data['best']} DAYS  /  {data['best_sub']}", 9, 700, MUTED, "end"),
+        f'<line x1="32" y1="308" x2="928" y2="308" stroke="{INK}"/>',
+        text(32, 320, f"CURRENT STREAK  {data['cur']} DAYS  /  {data['cur_sub']}", 9, 700, MUTED),
+        text(928, 320, f"LONGEST  {data['best']} DAYS  /  {data['best_sub']}", 9, 700, MUTED, "end"),
         "</g></svg>",
     ]
     return "\n".join(out) + "\n"
